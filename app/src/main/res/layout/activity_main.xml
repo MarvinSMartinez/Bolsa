@@ -1,18 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="17dp"
+    android:paddingTop="16dp"
+    android:paddingRight="17dp"
+    android:paddingBottom="16dp"
+    android:layout_marginBottom="1dp"
+    android:layout_marginRight="1dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginLeft="1dp"
+    android:background="@color/caja"
+
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="165dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="13dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_icono" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="13dp"
+        android:drawableStart="@drawable/ic_usuario"
+        android:ems="10"
+        android:hint="@string/ingrese_usuario"
+        android:minHeight="48dp"
+        android:padding="13dp"
+        android:textColorHint="#757575"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:autofillHints=""
+        android:drawableStart="@drawable/ic_password"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="13dp"
+        android:textColorHint="#757575" />
+
+    <Button
+        android:id="@+id/btRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/azulcaja"
+        android:text="@string/btRegistro" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@color/azulcaja"
+        android:text="@string/btlogin" />
+
+
+
+
+</LinearLayout>
