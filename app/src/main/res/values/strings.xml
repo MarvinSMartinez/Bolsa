@@ -17,4 +17,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="filtrar">Filtrar:</string>
+    <string name="buscar">BUSCAR</string>
+    <string name="buscar_empleo">Buscar empleo</string>
+
+    <array name="tipo_empleos">
+        <item>Programacion</item>
+
+    </array>
 </resources>
