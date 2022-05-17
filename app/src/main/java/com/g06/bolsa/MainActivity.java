@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.g06.bolsa.clases_auxiliares.Usuario;
+public class MainActivity extends AppCompatActivity {
+bolsabd Databasehelper;
+
 
 public class MainActivity extends AppCompatActivity {
     ControlDBLJ16001 DBHelper;
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         DBHelper = new ControlDBLJ16001(this);
     }
@@ -58,5 +63,9 @@ public class MainActivity extends AppCompatActivity {
         String toast = DBHelper.llenarBD();
         DBHelper.cerrar();
         Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
+
+        Databasehelper =new bolsabd(this);
+
     }
+
 }
