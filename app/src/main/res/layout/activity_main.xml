@@ -14,7 +14,6 @@
     android:layout_marginTop="1dp"
     android:layout_marginLeft="1dp"
     android:background="@color/caja"
-
     tools:context=".MainActivity">
 
     <ImageView
@@ -61,7 +60,8 @@
         android:layout_margin="4dp"
         android:layout_marginTop="50dp"
         android:background="@color/azulcaja"
-        android:text="@string/btRegistro" />
+        android:text="@string/btllenarBaseDeDatos"
+        android:onClick="llenarBaseDeDatos"/>
 
     <Button
         android:id="@+id/btLogin"
@@ -69,7 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:background="@color/azulcaja"
-        android:text="@string/btlogin" />
+        android:text="@string/btlogin"
+        android:onClick="autentificarUsuario" />
 
 
 

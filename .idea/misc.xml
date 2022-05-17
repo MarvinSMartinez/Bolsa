@@ -16,14 +16,16 @@
         <entry key="app/src/main/res/drawable/ic_estudios.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.189" />
+        <entry key="app/src/main/res/drawable/ic_usuario.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.189" />
-        <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_ofertasus.xml" value="0.25" />
         <entry key="app/src/main/res/layout/app_bar_inicio.xml" value="0.17074275362318841" />
-        <entry key="app/src/main/res/layout/content_inicio.xml" value="0.1286231884057971" />
+        <entry key="app/src/main/res/layout/content_inicio.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.12952898550724637" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1286231884057971" />
-        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.18" />
         <entry key="app/src/main/res/layout/nav_header_inicio.xml" value="0.22" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="app/src/main/res/menu/inicio.xml" value="0.18072916666666666" />
