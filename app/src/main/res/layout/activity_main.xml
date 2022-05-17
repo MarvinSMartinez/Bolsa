@@ -16,6 +16,7 @@
     android:background="@color/caja"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="165dp"
@@ -61,7 +62,7 @@
         android:layout_marginTop="50dp"
         android:background="@color/azulcaja"
         android:text="@string/btllenarBaseDeDatos"
-        android:onClick="llenarBaseDeDatos"/>
+        android:onClick="llenarBaseDeDatos" />
 
     <Button
         android:id="@+id/btLogin"

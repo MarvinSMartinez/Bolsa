@@ -3,15 +3,18 @@ package com.g06.bolsa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 
 import com.g06.bolsa.clases_auxiliares.Usuario;
-public class MainActivity extends AppCompatActivity {
-bolsabd Databasehelper;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void autentificarUsuario(View view) {
+        switch(getFirstTimeRun()) {
+            case 0:
+                Log.d("appPreferences", "Es la primera vez!");
+                llenarBaseDeDatos(view);
+                break;
+            case 1:
+                Log.d("appPreferences", "ya has iniciado la app alguna vez");
+                break;
+            case 2:
+                Log.d("appPreferences", "es una versión nueva");
+        }
+
         EditText editNombre = findViewById(R.id.etUsuario);
         EditText editPassword = findViewById(R.id.etPassword);
 
@@ -53,19 +68,29 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_LONG).show();
         }
-    }
+
+
+                }
 
     public void llenarBaseDeDatos(View view) {
 
         DBHelper.abrir();
         String toast = DBHelper.llenarBD();
         DBHelper.cerrar();
+
         Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
-
-        Databasehelper =new bolsabd(this);
-
+    }
+    private int getFirstTimeRun() {
+        SharedPreferences sp = getSharedPreferences("MYAPP", 0);
+        int result, currentVersionCode = BuildConfig.VERSION_CODE;
+        int lastVersionCode = sp.getInt("FIRSTTIMERUN", -1);
+        if (lastVersionCode == -1) result = 0; else
+            result = (lastVersionCode == currentVersionCode) ? 1 : 2;
+        sp.edit().putInt("FIRSTTIMERUN", currentVersionCode).apply();
+        return result;
     }
 
 }
