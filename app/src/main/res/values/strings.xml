@@ -3,7 +3,7 @@
 
     <string name="password">Ingrese password</string>
     <string name="btlogin">login</string>
-    <string name="btRegistro">Registro</string>
+    <string name="btllenarBaseDeDatos">Llenar base de datos</string>
     <string name="btFacebook">Login Facebook</string>
     <string name="ingrese_usuario">Ingrese usuario</string>
     <string name="title_activity_inicio">Inicio</string>
@@ -12,7 +12,7 @@
     <string name="nav_header_title">BIENVENIDO</string>
     <string name="nav_header_subtitle">Usuario</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

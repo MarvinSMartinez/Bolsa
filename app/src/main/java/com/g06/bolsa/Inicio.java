@@ -1,8 +1,13 @@
 package com.g06.bolsa;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
+
+import com.g06.bolsa.clases_auxiliares.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -59,4 +64,38 @@ private ActivityInicioBinding binding;
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // User chose the "Settings" item, show the app settings UI...
+                ControlDBLJ16001 DBHelper = new ControlDBLJ16001(this);
+                DBHelper.abrir();
+                Usuario usuario = DBHelper.obtenerUsuarioLogeado();
+
+                if (usuario != null) {
+                    usuario.setLoggedState(0);
+                    DBHelper.actualizar(usuario);
+                }
+                DBHelper.cerrar();
+
+                try {
+                    Class<?> clase = Class.forName("com.g06.bolsa.MainActivity");
+                    Intent inte = new Intent(this, clase);
+                    this.startActivity(inte);
+                }
+                catch(ClassNotFoundException e){
+                    e.printStackTrace();
+                }
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
 }
