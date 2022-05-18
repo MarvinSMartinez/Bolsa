@@ -18,7 +18,9 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_usuario.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.189" />
+        <entry key="app/src/main/res/layout/activity_administrador_inicio.xml" value="0.237109375" />
         <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_inicio_empresa.xml" value="0.15374873353596757" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_ofertasus.xml" value="0.25" />
         <entry key="app/src/main/res/layout/app_bar_inicio.xml" value="0.17074275362318841" />

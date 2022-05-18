@@ -237,16 +237,17 @@ public class ControlDBLJ16001 {
 
     public String llenarBD() {
         final String[] VIDUsuario = {"1","2","3"};
-        final String[] VNombreUsuario = {"Carlos","Pedro","Sara"};
+        final String[] VNombreUsuario = {"Carlos","Pedro","ues"};
         final String[] VPasswordUsuario = {"1234","1234","1234"};
         final String[] VTipoUsuario = {"administrador","candidato","empresa"};
 
-        final String[] VIDDepartamento = {"1","2","3","4"};
-        final String[] VNombreDepartamento = {"San Salvador","Santa Ana","San Miguel", "Sonsonate"};
+        final String[] VIDDepartamento = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14"};
+        final String[] VNombreDepartamento = {"Ahuachanpan","Cabañas","Chalatenango","Cuscatlan","La Libertad","Morazan","San Salvador","La Paz"+
+                "Santa Ana","San Miguel", "Sonsonate","San Vicente","La Union","Usulutan"};
 
         final String[] VIDMunicipio = {"1","2","3","4"};
         final String[] VNombreMunicipio = {"Tonacatepeque","Soyapango","Apopa","Ciudad Barrios"};
-        final String[] VIDDep = {"1","1","1","3"};
+        final String[] VIDDep = {"7","7","7","10"};
 
         abrir();
         db.execSQL("DELETE FROM usuario");

@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         DBHelper = new ControlDBLJ16001(this);
     }
 
@@ -58,14 +54,36 @@ public class MainActivity extends AppCompatActivity {
             DBHelper.cerrar();
 
             // Lazar el InicioActivity
-            try {
-                Class<?> clase = Class.forName("com.g06.bolsa.Inicio");
-                Intent inte = new Intent(this, clase);
-                this.startActivity(inte);
-            }
-            catch(ClassNotFoundException e){
-                e.printStackTrace();
-            }
+        switch (((Usuario) result).getTipo()){
+            case "candidato":
+                try {
+                    Class<?> clase = Class.forName("com.g06.bolsa.Inicio");
+                    Intent inte = new Intent(this, clase);
+                    this.startActivity(inte);
+                }
+                catch(ClassNotFoundException e){
+                    e.printStackTrace();
+                }break;
+            case "administrador":
+                try {
+                    Class<?> clase = Class.forName("com.g06.bolsa.AdministradorInicioActivity");
+                    Intent inte = new Intent(this, clase);
+                    this.startActivity(inte);
+                }
+                catch(ClassNotFoundException e){
+                    e.printStackTrace();
+                }break;
+            case "empresa":
+                try {
+                    Class<?> clase = Class.forName("com.g06.bolsa.InicioEmpresaActivity");
+                    Intent inte = new Intent(this, clase);
+                    this.startActivity(inte);
+                }
+                catch(ClassNotFoundException e){
+                    e.printStackTrace();
+                }break;
+        }
+
         }
         else {
 
