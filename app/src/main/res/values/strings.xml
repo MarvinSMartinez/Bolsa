@@ -3,6 +3,11 @@
 
     <string name="password">Ingrese password</string>
     <string name="btlogin">login</string>
+
+    <string name="btnEditEmpresas">EditEmpresas</string>
+    <string name="btnEditCandidatos">EditCandidatos</string>
+    <string name="btnEditOfertas">EditOfertas</string>
+
     <string name="btllenarBaseDeDatos">Llenar base de datos</string>
     <string name="btFacebook">Login Facebook</string>
     <string name="ingrese_usuario">Ingrese usuario</string>
