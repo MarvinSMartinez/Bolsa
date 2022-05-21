@@ -43,6 +43,7 @@
             android:columnOrderPreserved="false"
             android:padding="14dp">
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardConstruccion"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:cardBackgroundColor="@color/azulcaja"
@@ -80,8 +81,8 @@
                 </TextView>
 
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardInformatica"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:cardBackgroundColor="@color/azulcaja"
@@ -119,49 +120,8 @@
                 </TextView>
 
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardBackgroundColor="@color/azulcaja"
-                android:layout_marginBottom="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_gravity="center_horizontal"
-                app:cardElevation="2dp"
-                app:contentPadding="11dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="true"
-                app:cardCornerRadius="8dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="7dp"
-                    android:minHeight="18dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_salud" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/letterrocko"
-                    android:gravity="center"
-                    android:minHeight="12dp"
-                    android:padding="1dp"
-                    android:layout_margin="1dp"
-                    android:text="Salud"
-                    android:textColor="@color/white"
-                    android:textStyle="normal">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFinanzas"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:cardBackgroundColor="@color/azulcaja"

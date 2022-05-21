@@ -3,16 +3,10 @@
 
     <string name="password">Ingrese password</string>
     <string name="btlogin">login</string>
-
-    <string name="btnEditEmpresas">EditEmpresas</string>
-    <string name="btnEditCandidatos">EditCandidatos</string>
-    <string name="btnEditOfertas">EditOfertas</string>
-
     <string name="btllenarBaseDeDatos">Llenar base de datos</string>
     <string name="btFacebook">Login Facebook</string>
     <string name="ingrese_usuario">Ingrese usuario</string>
     <string name="title_activity_inicio">Inicio</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">BIENVENIDO</string>

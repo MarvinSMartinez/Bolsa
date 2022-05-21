@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".clasesCardAreas.cFinanzas"
+            android:exported="false" />
+        <activity
+            android:name=".clasesCardAreas.cInformatica"
+            android:exported="false" />
+        <activity
+            android:name=".clasesCardAreas.Cconstruccion"
+            android:exported="false" />
+        <activity
             android:name=".AdministradorInicioActivity"
             android:exported="false" />
         <activity

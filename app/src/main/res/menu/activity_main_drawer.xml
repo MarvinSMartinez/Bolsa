@@ -9,22 +9,10 @@ tools:showIn="navigation_view">
         android:icon="@drawable/ic_home"
         android:title="@string/menu_home" />
     <item
-        android:title="Datos de mi Perfil"
-        />
-    <item
         android:id="@+id/nav_gallery"
         android:icon="@drawable/ic_laboral"
-        android:title="Experiencia Laboral" />
-    <item
-        android:id="@+id/checkBox"
-        android:icon="@drawable/ic_referencias"
-        android:title="Referencias Personales"
-        />
-    <item
-        android:id="@+id/radioButton"
-        android:icon="@drawable/ic_estudios"
-        android:title="Datos De estudio"
-        />
+        android:title="Datos de Mi perfil" />
+
 
 
 </group>
