@@ -25,4 +25,9 @@
         <item>Programacion</item>
 
     </array>
+
+    <!--Strings de empresa-->
+    <string name="imagen_perfil_empresa">Perfil</string>
+    <string name="imagen_ofertas">Ofertas</string>
+    <!---->
 </resources>
