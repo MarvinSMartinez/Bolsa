@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".departamento.DepartamentoMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".departamento.DepartamentoInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".departamento.DepartamentoEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".departamento.DepartamentoConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".departamento.DepartamentoActualizarActivity"
+            android:exported="false" />
+        <activity
             android:name=".contacto_aspirante.ContactoAspiranteActualizarActivity"
             android:exported="false" />
         <activity
