@@ -14,13 +14,13 @@ import com.g06.bolsa.clases_auxiliares.Usuario;
 import com.g06.bolsa.clases_auxiliares.Departamento;
 import com.g06.bolsa.clases_auxiliares.Municipio;
 
-public class ControlDBLJ16001 {
+public class ControlBDLJ16001 {
 
     private final Context context;
     private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
-    public ControlDBLJ16001(Context ctx) {
+    public ControlBDLJ16001(Context ctx) {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
     }
@@ -44,7 +44,7 @@ public class ControlDBLJ16001 {
                 db.execSQL("create table ACCESO_USUARIO (ID_ACCESO CHAR(4) not null,ID_OPCIONCRUD CHAR(4),ID_USUARIO CHAR(4),TIPO_ACCESO CHAR(4) not null,primary key (ID_ACCESO),foreign key (ID_USUARIO) references USUARIO (ID_USUARIO),foreign key (ID_OPCIONCRUD) references OPCIONCRUD (ID_OPCIONCRUD));");
                 db.execSQL("create table AREA_TRABAJO (ID_AREA CHAR(4) not null,NOMBRE_AREA CHAR(32) not null,primary key (ID_AREA));");
                 db.execSQL("create table EMPRESA (ID_EMPRESA CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),RAZON_SOCIAL_EMPRESA CHAR(32) not null,NOMBRE_EMPRESA CHAR(32) not null,DIRECCION_EMPRESA CHAR(256) not null,primary key (ID_EMPRESA),foreign key (ID_DEPARTAMENTO) references DEPARTAMENTO (ID_DEPARTAMENTO));");
-                db.execSQL("create table OFERTA_LABORAL (ID_OFERTA CHAR(4) not null,ID_EMPRESA CHAR(4),INICIO_OFERTA DATE not null,FIN_OFERTA DATE not null,NOMBRE_OFERTA CHAR(256) not null,primary key (ID_OFERTA),foreign key (ID_EMPRESA) references EMPRESA (ID_EMPRESA));");
+                db.execSQL("create table OFERTA_LABORAL (ID_OFERTA CHAR(4) not null,ID_EMPRESA CHAR(4),INICIO_OFERTA CHAR(10) not null,FIN_OFERTA CHAR(10) not null,NOMBRE_OFERTA CHAR(256) not null,primary key (ID_OFERTA),foreign key (ID_EMPRESA) references EMPRESA (ID_EMPRESA));");
                 db.execSQL("create table DETALLES_OFERTA (ID_DETALLE_OFERTA CHAR(4) not null,ID_OFERTA CHAR(4),PERFIL CHAR(256) not null,SALARIO_OFERTA CHAR(4) not null,primary key (ID_DETALLE_OFERTA),foreign key (ID_OFERTA) references OFERTA_LABORAL (ID_OFERTA));");
                 db.execSQL("create table ASPIRANTE (ID_ASPIRANTE CHAR(4) not null,ID_DETALLE_OFERTA CHAR(4),ID_EMPRESA CHAR(4),ESTADO smallint not null,primary key (ID_ASPIRANTE),foreign key (ID_DETALLE_OFERTA) references DETALLES_OFERTA (ID_DETALLE_OFERTA),foreign key (ID_EMPRESA) references EMPRESA (ID_EMPRESA));");
                 db.execSQL("create table CONTACTO_ASPIRANTE (ID_CONTACTO CHAR(4) not null,ID_CANDIDATO CHAR(2),TELEFONO1_CONTACTO CHAR(8) not null,TELEFONO2_CONTACTO   CHAR(8) not null,CORRE_CONTACTO CHAR(8) not null,primary key (ID_CONTACTO),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));");
