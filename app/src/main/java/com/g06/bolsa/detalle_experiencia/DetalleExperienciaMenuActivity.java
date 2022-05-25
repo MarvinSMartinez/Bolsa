@@ -13,10 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
     public class DetalleExperienciaMenuActivity extends ListActivity {
-        String[] menu={"Insertar registro",
-                       "Eliminar registro",
-                       "Consultar registro",
-                       "Actualizar registro"};
+        String[] menu={"Insertar dato sobre experiencia",
+                       "Eliminar dato sobre experiencia",
+                       "Consultar dato sobre experiencia",
+                       "Actualizar dato sobre experiencia"};
 
         String[] activities={"DetalleExperienciaInsertarActivity",
                              "DetalleExperienciaEliminarActivity",

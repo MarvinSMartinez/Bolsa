@@ -147,16 +147,18 @@ public class ControlDBLJ16001 {
     public String insertar(DetalleExperiencia de){
         String regInsertados="Registro Insertado Nº= ";
         long contador=0;
-        ContentValues alum = new ContentValues();
-        alum.put("ID_DETALLE_EXPERIENCIA", de.getId());
-        alum.put("ID_CANDIDATO", de.getIdCandidato());
-        alum.put("LUGAR_EXPERIENCIA", de.getLugarExperiencia());
-        alum.put("PUESTO_EXPERIENCIA", de.getPuestoExperiencia());
-        alum.put("TIEMPO_EXPERIENCIA", de.getTiempoExperiencia());
-        contador=db.insert("DETALLE_EXPERIENCIA", null, alum);
+        if (verificarIntegridad(de,2)) {
+            ContentValues alum = new ContentValues();
+            alum.put("ID_DETALLE_EXPERIENCIA", de.getId());
+            alum.put("ID_CANDIDATO", de.getIdCandidato());
+            alum.put("LUGAR_EXPERIENCIA", de.getLugarExperiencia());
+            alum.put("PUESTO_EXPERIENCIA", de.getPuestoExperiencia());
+            alum.put("TIEMPO_EXPERIENCIA", de.getTiempoExperiencia());
+            contador = db.insert("DETALLE_EXPERIENCIA", null, alum);
+        }
         if(contador==-1 || contador==0)
         {
-            regInsertados= "Error al Insertar el registro: registro duplicado. Verificar inserción";
+            regInsertados= "Error al Insertar el dato de experiencia: Verificar inserción";
         }
         else {
             regInsertados=regInsertados+contador;
@@ -167,15 +169,17 @@ public class ControlDBLJ16001 {
     public String insertar(DatoEstudio de){
         String regInsertados="Registro Insertado Nº= ";
         long contador=0;
-        ContentValues alum = new ContentValues();
-        alum.put("ESTUDIOS_NIVEL", de.getEstudioNivel());
-        alum.put("ID_CANDIDATO", de.getIdCandidato());
-        alum.put("ID_INSTITUCION", de.getIdInstitucion());
+        if (verificarIntegridad(de,4)) {
+            ContentValues alum = new ContentValues();
+            alum.put("ESTUDIOS_NIVEL", de.getEstudioNivel());
+            alum.put("ID_CANDIDATO", de.getIdCandidato());
+            alum.put("ID_INSTITUCION", de.getIdInstitucion());
 
-        contador=db.insert("DATOS_ESTUDIOS", null, alum);
+            contador = db.insert("DATOS_ESTUDIOS", null, alum);
+        }
         if(contador==-1 || contador==0)
         {
-            regInsertados= "Error al Insertar el registro: registro duplicado. Verificar inserción";
+            regInsertados= "Error al Insertar el registro: Verificar inserción";
         }
         else {
             regInsertados=regInsertados+contador;
@@ -187,17 +191,19 @@ public class ControlDBLJ16001 {
     public String insertar(ContactoAspirante de) {
         String regInsertados="Registro Insertado Nº= ";
         long contador=0;
-        ContentValues alum = new ContentValues();
-        alum.put("ID_CONTACTO", de.getId());
-        alum.put("ID_CANDIDATO", de.getIdCandidato());
-        alum.put("TELEFONO1_CONTACTO", de.getTelefono1());
-        alum.put("TELEFONO2_CONTACTO", de.getTelefono2());
-        alum.put("CORRE_CONTACTO", de.getCorreo());
+        if (verificarIntegridad(de,3)) {
+            ContentValues alum = new ContentValues();
+            alum.put("ID_CONTACTO", de.getId());
+            alum.put("ID_CANDIDATO", de.getIdCandidato());
+            alum.put("TELEFONO1_CONTACTO", de.getTelefono1());
+            alum.put("TELEFONO2_CONTACTO", de.getTelefono2());
+            alum.put("CORRE_CONTACTO", de.getCorreo());
 
-        contador=db.insert("CONTACTO_ASPIRANTE", null, alum);
+            contador = db.insert("CONTACTO_ASPIRANTE", null, alum);
+        }
         if(contador==-1 || contador==0)
         {
-            regInsertados= "Error al Insertar el registro: registro duplicado. Verificar inserción";
+            regInsertados= "Error al Insertar el registro: Verificar inserción";
         }
         else {
             regInsertados=regInsertados+contador;
@@ -388,8 +394,9 @@ public class ControlDBLJ16001 {
         }else{
             return null;
         }
-    }//consultarContactoAspirante
-////CONTACTO_ASPIRANTE (ID_CONTACTO CHAR(4) not null,ID_CANDIDATO CHAR(2),TELEFONO1_CONTACTO CHAR(8) not null,TELEFONO2_CONTACTO   CHAR(8) not null,CORRE_CONTACTO CHAR(8) not null,primary key (ID_CONTACTO),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO))
+    }
+
+    //CONTACTO_ASPIRANTE (ID_CONTACTO CHAR(4) not null,ID_CANDIDATO CHAR(2),TELEFONO1_CONTACTO CHAR(8) not null,TELEFONO2_CONTACTO   CHAR(8) not null,CORRE_CONTACTO CHAR(8) not null,primary key (ID_CONTACTO),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO))
     public ContactoAspirante consultarContactoAspirante(String id) {
         String[] ids = {id};
         Cursor cursor = db.query("CONTACTO_ASPIRANTE",
@@ -412,7 +419,7 @@ public class ControlDBLJ16001 {
     }
     /* Fin métodos para consultar. */
 
-
+//PERFIL_CANDIDATO (ID_CANDIDATO CHAR(2) not null,ID_DEPARTAMENTO CHAR(4),ID_USUARIO CHAR(4),NOMBRES_CANDIDATO CHAR(32) not null,APELLIDOS_CANIDATO CHAR(32) not null,DUI_CANDIDATO CHAR(10) not null,NIT_CANDIDATO CHAR(17) not null
     private boolean verificarIntegridad(Object dato, int relacion) throws SQLException {
         switch (relacion) {
             case 1:
@@ -432,11 +439,11 @@ public class ControlDBLJ16001 {
             }
             case 2:
             {
-                //verificar que al modificar DETALLE_EXPERIENCIA exista el candidato.
+                //verificar que al modificar o crear DETALLE_EXPERIENCIA exista el candidato.
                 DetalleExperiencia de= (DetalleExperiencia) dato;
-                String[] ids = {de.getId()};
+                String[] ids = {de.getIdCandidato()};
                 abrir();
-                Cursor c = db.query("DETALLE_EXPERIENCIA", null, "ID_DETALLE_EXPERIENCIA = ?", ids, null, null, null);
+                Cursor c = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", ids, null, null, null);
                 if(c.moveToFirst()){
                     //Se encontraron datos
                     return true;
@@ -446,13 +453,31 @@ public class ControlDBLJ16001 {
 
             case 3:
             {
-                //verificar que al modificar CONTACTO_ASPIRANTE exista el candidato.
+                //verificar que al modificar o crear CONTACTO_ASPIRANTE exista el candidato.
                 //CONTACTO_ASPIRANTE (ID_CONTACTO
                 ContactoAspirante de= (ContactoAspirante) dato;
-                String[] ids = {de.getId()};
+                String[] ids = {de.getIdCandidato()};
                 abrir();
-                Cursor c = db.query("CONTACTO_ASPIRANTE", null, "ID_CONTACTO = ?", ids, null, null, null);
+                Cursor c = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", ids, null, null, null);
                 if(c.moveToFirst()){
+                    //Se encontraron datos
+                    return true;
+                }
+                return false;
+            }
+            case 4:
+            {
+                //verificar que al modificar DATO_ESTUDIO exista el candidato y la institucion.
+                //CONTACTO_ASPIRANTE (ID_CONTACTO
+                //INSTITUCION_EDUCATIVA (ID_INSTITUCION CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),NOMBRE_INSTITUCION CHAR(32) not null,primary key (ID_INSTITUCION),foreign key (ID_DEPARTAMENTO) references DEPARTAMENTO (ID_DEPARTAMENTO));
+                DatoEstudio de= (DatoEstudio) dato;
+                String[] ids = {de.getIdCandidato()};
+                String[] id2 = {de.getIdInstitucion()};
+                abrir();
+                Cursor c = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", ids, null, null, null);
+                Cursor c2 = db.query("INSTITUCION_EDUCATIVA", null, "ID_INSTITUCION = ?", id2,
+                        null, null, null);
+                if(c.moveToFirst() && c2.moveToFirst()){
                     //Se encontraron datos
                     return true;
                 }
