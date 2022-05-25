@@ -207,6 +207,21 @@ public class ControlBDMH18083 {
         }
     }
 
+    public Aspirante consultarAspirante(String idO){
+        String[] id = {idO};
+        Cursor cursor = db.query("ASPIRANTE", camposAspirante, "id_aspirante = ?", id, null, null, null);
+        if(cursor.moveToFirst()){
+            Aspirante aspirante = new Aspirante();
+            aspirante.setIdAspirante(cursor.getString(0));
+            aspirante.setIdDetalleOferta(cursor.getString(1));
+            aspirante.setIdEmpresa(cursor.getString(2));
+            aspirante.setEstado(cursor.getInt(3));
+            return aspirante;
+        }else{
+            return null;
+        }
+    }
+
     //Actualizaciones
     public String actualizarOferta(OfertaLaboral ofertaLaboral){
         if(verificarIntegridad(ofertaLaboral, 1)){
@@ -235,6 +250,18 @@ public class ControlBDMH18083 {
         }
     }
 
+    public String actualizarAspirante(Aspirante aspirante){
+        if(verificarIntegridad(aspirante, 2)){
+            String[] id = {aspirante.getIdAspirante()};
+            ContentValues cv = new ContentValues();
+            cv.put("estado", aspirante.getEstado());
+            db.update("ASPIRANTE", cv, "id_aspirante = ?", id);
+            return "Registro Actualizado Correctamente";
+        }else{
+            return "Registro con id " + aspirante.getIdAspirante() + " no existe";
+        }
+    }
+
     //Eliminaciones
     public String eliminar(OfertaLaboral ofertaLaboral){
         String regAfectados="filas afectadas= ";
@@ -252,6 +279,12 @@ public class ControlBDMH18083 {
         return regAfectados;
     }
 
-
+    public String eliminar(Aspirante aspirante){
+        String regAfectados="filas afectadas= ";
+        int contador=0;
+        contador+=db.delete("ASPIRANTE", "id_aspirante='"+aspirante.getIdAspirante()+"'", null);
+        regAfectados+=contador;
+        return regAfectados;
+    }
 
 }
