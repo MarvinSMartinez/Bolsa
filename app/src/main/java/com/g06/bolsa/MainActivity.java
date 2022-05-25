@@ -16,12 +16,12 @@ import com.g06.bolsa.clases_auxiliares.Usuario;
 
 
 public class MainActivity extends AppCompatActivity {
-    ControlDBLJ16001 DBHelper;
+    ControlBDLJ16001 DBHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DBHelper = new ControlDBLJ16001(this);
+        DBHelper = new ControlBDLJ16001(this);
     }
 
     public void autentificarUsuario(View view) {

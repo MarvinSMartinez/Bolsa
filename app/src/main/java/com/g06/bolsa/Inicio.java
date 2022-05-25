@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Toast;
 
 import com.g06.bolsa.clases_auxiliares.Usuario;
 import com.google.android.material.snackbar.Snackbar;
@@ -70,7 +69,7 @@ private ActivityInicioBinding binding;
         switch (item.getItemId()) {
             case R.id.action_settings:
                 // User chose the "Settings" item, show the app settings UI...
-                ControlDBLJ16001 DBHelper = new ControlDBLJ16001(this);
+                ControlBDLJ16001 DBHelper = new ControlBDLJ16001(this);
                 DBHelper.abrir();
                 Usuario usuario = DBHelper.obtenerUsuarioLogeado();
 

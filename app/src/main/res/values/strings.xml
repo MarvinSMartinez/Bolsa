@@ -26,9 +26,44 @@
 
     </array>
 
-    <!--Strings de empresa-->
+    <!--Strings de empresa y oferta-->
     <string name="imagen_perfil_empresa">Perfil</string>
     <string name="imagen_ofertas">Ofertas</string>
+    <string name="btnInsertarOferta">Insertar oferta</string>
+    <string name="btnEditarOferta">Editar oferta</string>
+    <string name="btnConsultarOferta">Consultar oferta</string>
+    <string name="btnEliminarOferta">Eliminar oferta</string>
+    <string name="idEmpresa">idEmpresa</string>
+    <string name="inicioOferta">Inicio Oferta</string>
+    <string name="finOferta">Fin Oferta</string>
+    <string name="nombreOferta">Nombre Oferta</string>
+    <string name="opciones">Opciones</string>
+    <string name="insertar">Insertar</string>
+    <string name="limpiar">Limpiar</string>
+    <string
+        name="title_activity_oferta_laboral_insertar">OfertaInsertarActivity</string>
+    <string
+        name="title_activity_oferta_laboral_alumno_eliminar">OfertaEliminarActivity</string>
+    <string
+            name="title_activity_oferta_laboral_alumno_actualizar">OfertaActualizarActivity</string>
+    <string
+        name="title_activity_oferta_laboral_alumno_consultar">OfertaConsultarActivity</string>
+    <string name="idOferta">id Oferta</string>
+    <string name="consultar">Consultar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <!---->
+
+    <!--Strings aspirante-->
+    <string name="idAspirante">idAspirante</string>
+    <string name="estado">Estado</string>
+    <string name="idDetalleOferta">id Detalle</string>
+    <string name="perfil">perfil</string>
+    <string name="salario">Salario</string>
+    <string-array name="estado">
+        <item>Aprobado</item>
+        <item>Rechazado</item>
+    </string-array>
     <!---->
 
     <!--Strings de detalle_experiencia -->

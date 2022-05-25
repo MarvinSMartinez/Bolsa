@@ -57,7 +57,49 @@
             android:name=".detalle_experiencia.DetalleExperienciaMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuOfertasActivity"
+            android:name=".DetalleOfertaEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleOfertaConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleOfertaActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleOfertaInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleOfertaMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AspiranteEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AspiranteActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AspiranteConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AspiranteInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OfertaLaboralEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OfertaLaboralInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OfertaLaboralConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OfertaLaboralActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AspiranteMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OfertaMenuActivity"
             android:exported="false" />
         <activity
             android:name=".EmpresaEditarActivity"
