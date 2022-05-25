@@ -31,13 +31,15 @@
         android:background="@color/azulcaja"
         android:text="Datos Personales"
         />
+
     <Button
+
+        android:id="@+id/id_button_experiencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@color/azulcaja"
-        android:text="Datos de Experiencia"
-        />
+        android:text="Datos de Experiencia" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +47,22 @@
         android:background="@color/azulcaja"
         android:text="Referencias Laborales"
         />
-
+    <Button
+        android:id="@+id/id_button_estudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/azulcaja"
+        android:text="@string/dato_estudio"
+        />
+    <Button
+        android:id="@+id/id_button_contactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/azulcaja"
+        android:text="@string/dato_contactos"
+        />
 
 
 

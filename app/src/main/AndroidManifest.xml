@@ -12,6 +12,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".contacto_aspirante.ContactoAspiranteActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contacto_aspirante.ContactoAspiranteConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contacto_aspirante.ContactoAspiranteEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contacto_aspirante.ContactoAspiranteInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contacto_aspirante.ContactoAspiranteMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dato_estudio.DatoEstudioActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dato_estudio.DatoEstudioConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dato_estudio.DatoEstudioEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dato_estudio.DatoEstudioInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dato_estudio.DatoEstudioMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_experiencia.DetalleExperienciaActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_experiencia.DetalleExperienciaConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_experiencia.DetalleExperienciaEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_experiencia.DetalleExperienciaInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_experiencia.DetalleExperienciaMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuOfertasActivity"
             android:exported="false" />
         <activity

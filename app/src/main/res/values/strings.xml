@@ -30,4 +30,33 @@
     <string name="imagen_perfil_empresa">Perfil</string>
     <string name="imagen_ofertas">Ofertas</string>
     <!---->
+
+    <!--Strings de detalle_experiencia -->
+    <string name="detalle_experiencia_idcandidato">Candidato</string>
+    <string name="detalle_experiencia_lugar_experiencia">Lugar en que obtuvo experiencia</string>
+    <string name="detalle_experiencia_puesto">Puesto</string>
+    <string name="detalle_experiencia_tiempo">Tiempo</string>
+    <!--Strings de detalle_experiencia -->
+
+    <!--Strings de dato_estudio -->
+    <string name="dato_estudio">Datos de estudio</string>
+    <string name="nivel_estudio">Nivel de estudio</string>
+    <string name="institucionId">ID de la institución</string>
+    <string name="candidato_id">Identificador del candidato</string>
+    <!--Strings de dato_estudio -->
+
+    <!--Strings de contacto_aspirante -->
+    <string name="dato_contactos">Contactos</string>
+    <string name="contacto_id">Identificador del contacto</string>
+    <string name="telefono1">Teléfono 1</string>
+    <string name="telefono2">Teléfono 2</string>
+    <string name="correo">Correo electrónico</string>
+    <!--Strings de contacto_aspirante -->
+
+    <string name="opciones">Opciones</string>
+    <string name="insertar">Insertar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="consultar">Consultar</string>
 </resources>

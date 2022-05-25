@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:background="@color/caja"
+    android:orientation="vertical" >
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/contacto_id"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editContactoId"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/candidato_id"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editCandidatoId"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/telefono1"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editTelefono1"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/telefono2"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editTelefono2"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/correo"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editCorreo"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:text="@string/opciones"
+        android:textColor="#455A64" />
+
+    <Button
+        android:onClick="actualizar"
+        android:text="@string/actualizar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="limpiarTexto"
+        android:text="@string/limpiar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

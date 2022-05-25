@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+        <TextView android:text="ID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/editIdDetalleExperiencia"
+            android:inputType="text"
+            android:maxLength="30"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView android:text="@string/detalle_experiencia_idcandidato"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:gravity="center_vertical" />
+        <EditText
+            android:id="@+id/edit_detalle_experiencia_idcandidato"
+            android:inputType="text"
+            android:maxLength="30"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView android:text="@string/detalle_experiencia_lugar_experiencia"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:gravity="center_vertical" />
+        <EditText
+            android:id="@+id/editLugar"
+            android:inputType="text"
+            android:maxLength="30"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView android:text="@string/detalle_experiencia_puesto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:gravity="center_vertical" />
+        <EditText
+            android:id="@+id/editPuesto"
+            android:inputType="text"
+            android:maxLength="30"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"/>
+
+        <TextView android:text="@string/detalle_experiencia_tiempo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp" />
+        <EditText
+            android:id="@+id/editTiempo"
+            android:inputType="text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+
+        <TextView
+            android:text="@string/opciones"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:gravity="center_vertical" />
+
+        <Button
+            android:onClick="insertar"
+            android:text="@string/insertar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="@string/limpiar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+</LinearLayout>
