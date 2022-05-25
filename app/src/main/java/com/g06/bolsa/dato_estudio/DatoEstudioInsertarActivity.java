@@ -7,11 +7,11 @@ import android.widget.Toast;
 import android.app.Activity;
 
 import com.g06.bolsa.R;
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 
 public class DatoEstudioInsertarActivity extends Activity {
-    ControlDBLJ16001 DBHelper;
+    ControlBDLJ16001 DBHelper;
     EditText estudioNivel;
     EditText candidatoId;
     EditText  institucionId;
@@ -20,7 +20,7 @@ public class DatoEstudioInsertarActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dato_estudio_insertar);
-        DBHelper = new ControlDBLJ16001(this);
+        DBHelper = new ControlBDLJ16001(this);
 
         estudioNivel = findViewById(R.id.editEstudiNivel);
         candidatoId = findViewById(R.id.editCandidatoId);

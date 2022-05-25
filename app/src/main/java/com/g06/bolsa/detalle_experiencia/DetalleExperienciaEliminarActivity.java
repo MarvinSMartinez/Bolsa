@@ -6,20 +6,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 
 
 public class DetalleExperienciaEliminarActivity extends Activity {
     EditText editid;
-    ControlDBLJ16001 controlhelper;
+    ControlBDLJ16001 controlhelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_experiencia_eliminar);
-        controlhelper=new ControlDBLJ16001(this);
+        controlhelper=new ControlBDLJ16001(this);
 
         editid=(EditText)findViewById(R.id.edit_eliminar_id_detalle_experiencia);
     }

@@ -9,11 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.g06.bolsa.R;
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 
 public class DetalleExperienciaInsertarActivity extends AppCompatActivity {
-    ControlDBLJ16001 DBHelper;
+    ControlBDLJ16001 DBHelper;
     TextView candidatoId;
     TextView id;
     TextView lugar;
@@ -24,7 +24,7 @@ public class DetalleExperienciaInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_experiencia_insertar);
-        DBHelper = new ControlDBLJ16001(this);
+        DBHelper = new ControlBDLJ16001(this);
         id = findViewById(R.id.editIdDetalleExperiencia);
         candidatoId = findViewById(R.id.edit_detalle_experiencia_idcandidato);
         lugar = findViewById(R.id.editLugar);

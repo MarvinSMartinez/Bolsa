@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 
 public class DatoEstudioConsultarActivity extends Activity {
 
-    ControlDBLJ16001 helper;
+    ControlBDLJ16001 helper;
     EditText estudioNivel;
     EditText candidatoId;
     EditText institucionId;
@@ -26,7 +26,7 @@ public class DatoEstudioConsultarActivity extends Activity {
         setContentView(R.layout.activity_dato_estudio_consultar);
 
         // Instancia de la clase que controla la base de datos.
-        helper = new ControlDBLJ16001(this);
+        helper = new ControlBDLJ16001(this);
 
         // Referencia a los widgets de la interfaz.
         estudioNivel = findViewById(R.id.editEstudiNivel);

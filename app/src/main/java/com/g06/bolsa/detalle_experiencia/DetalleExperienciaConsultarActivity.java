@@ -7,13 +7,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 
 public class DetalleExperienciaConsultarActivity extends Activity {
 
-    ControlDBLJ16001 helper;
+    ControlBDLJ16001 helper;
     TextView candidatoId;
     TextView id;
     TextView lugar;
@@ -25,7 +25,7 @@ public class DetalleExperienciaConsultarActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_experiencia_consultar);
-        helper = new ControlDBLJ16001(this);
+        helper = new ControlBDLJ16001(this);
 
         id = findViewById(R.id.editIdDetalleExperiencia);
         candidatoId = findViewById(R.id.edit_detalle_experiencia_idcandidato);

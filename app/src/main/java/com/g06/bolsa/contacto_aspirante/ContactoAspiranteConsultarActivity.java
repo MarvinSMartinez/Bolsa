@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.g06.bolsa.ControlDBLJ16001;
+import com.g06.bolsa.ControlBDLJ16001;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.ContactoAspirante;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 
 public class ContactoAspiranteConsultarActivity extends Activity {
-    ControlDBLJ16001 DBHelper;
+    ControlBDLJ16001 DBHelper;
     EditText id;
     EditText candidatoId;
     EditText  telefono1;
@@ -25,7 +25,7 @@ public class ContactoAspiranteConsultarActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto_aspirante_consultar);
-        DBHelper = new ControlDBLJ16001(this);
+        DBHelper = new ControlBDLJ16001(this);
 
         id = findViewById(R.id.editContactoId);
         candidatoId = findViewById(R.id.editCandidatoId);
