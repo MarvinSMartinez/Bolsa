@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.g06.bolsa.clases_auxiliares.ContactoAspirante;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
+import com.g06.bolsa.clases_auxiliares.InstitucionEducativa;
 import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 import com.g06.bolsa.clases_auxiliares.Usuario;
 import com.g06.bolsa.clases_auxiliares.Departamento;
@@ -236,6 +237,29 @@ public class ControlBDLJ16001 {
         }
         return regInsertados;
     }
+    public String insertar(InstitucionEducativa de) {
+        String regInsertados="Registro Insertado Nº= ";
+        long contador=0;
+        //if (verificarIntegridad(de,3)) {
+        ContentValues alum = new ContentValues();
+        alum.put("ID_INSTITUCION", de.getIdIstitucion());
+        alum.put("ID_DEPARTAMENTO ", de.getIdDepartamento());
+        alum.put("NOMBRE_INSTITUCION", de.getNombreInstitucion());
+
+
+        contador = db.insert("INSTITUCION_EDUCATIVA", null, alum);
+        // }
+        if(contador==-1 || contador==0)
+        {
+            regInsertados= "Error al Insertar el registro: Verificar inserción";
+        }
+        else {
+            regInsertados=regInsertados+contador;
+        }
+        return regInsertados;
+    }
+    //INSTITUCION_EDUCATIVA (ID_INSTITUCION CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),NOMBRE_INSTITUCION CHAR(32) not null,
+
     /* Fin métodos para insertar. */
 
     /* Inicio métodos para actualizar. */
@@ -521,7 +545,7 @@ public class ControlBDLJ16001 {
         final String[] VTipoUsuario = {"administrador","candidato","empresa"};
 
         final String[] VIDDepartamento = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14"};
-        final String[] VNombreDepartamento = {"Ahuachanpan","Cabañas","Chalatenango","Cuscatlan","La Libertad","Morazan","San Salvador","La Paz"+
+        final String[] VNombreDepartamento = {"Ahuachanpan","Cabañas","Chalatenango","Cuscatlan","La Libertad","Morazan","San Salvador","La Paz",
                 "Santa Ana","San Miguel", "Sonsonate","San Vicente","La Union","Usulutan"};
 
         final String[] VIDMunicipio = {"1","2","3","4"};
@@ -537,11 +561,26 @@ public class ControlBDLJ16001 {
         final String[] VIDUI_CANDIDATO = {"7543534","745354","754543"};
         final String[] VNIT_CANDIDATO = {"7","7","7"};
 
+        //INSTITUCION_EDUCATIVA (ID_INSTITUCION CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),NOMBRE_INSTITUCION CHAR(32) not null,
+        final String[] ViID_INSTITUCION = {"1","2","3"};
+        final String[] ViID_DEPARTAMENTO = {"1","1","1"};
+        final String[] ViNOMBRE_INSTITUCION  = {"Escuela uno","Escuela dos","Escuela tres"};
+
         abrir();
         db.execSQL("DELETE FROM usuario");
         db.execSQL("DELETE FROM departamento");
         db.execSQL("DELETE FROM municipio");
         db.execSQL("DELETE FROM PERFIL_CANDIDATO");
+        db.execSQL("DELETE FROM INSTITUCION_EDUCATIVA");
+
+        InstitucionEducativa departament = new InstitucionEducativa();
+        for (int i=0;i<3;i++) {
+            departament.setIdIstitucion(ViID_INSTITUCION[i]);
+            departament.setIdDepartamento(ViID_DEPARTAMENTO[i]);
+            departament.setNombreInstitucion(ViNOMBRE_INSTITUCION[i]);
+
+            insertar(departament);
+        }
 
         PerfilCandidato usuariow = new PerfilCandidato();
 
@@ -570,7 +609,7 @@ public class ControlBDLJ16001 {
         }
 
         Departamento departamento = new Departamento();
-        for (int i=0;i<4;i++) {
+        for (int i=0;i<14;i++) {
             departamento.setId(VIDDepartamento[i]);
             departamento.setNombre(VNombreDepartamento[i]);
 
