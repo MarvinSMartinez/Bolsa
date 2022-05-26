@@ -14,12 +14,14 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Datos de mi perfil</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="filtrar">Filtrar:</string>
     <string name="buscar">BUSCAR</string>
     <string name="buscar_empleo">Buscar empleo</string>
+    <string name="datos_de_mi_perfil">Datos de mi perfil</string>
+
 
     <array name="tipo_empleos">
         <item>Programacion</item>
@@ -88,4 +90,6 @@
     <string name="eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
     <string name="consultar">Consultar</string>
+    <string name="perfil_usuario">Perfil de Usuario</string>
+
 </resources>

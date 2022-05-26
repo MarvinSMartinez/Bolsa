@@ -27,7 +27,7 @@ public class DatoEstudioMenuActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ListView listView = getListView();
-        listView.setBackgroundColor(Color.rgb(0, 0, 255));
+        listView.setBackgroundColor(Color.rgb(203, 222, 251));
         ArrayAdapter<String> adapter = new
                 ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, menu);
         setListAdapter(adapter);
@@ -37,6 +37,7 @@ public class DatoEstudioMenuActivity extends ListActivity {
     protected void onListItemClick(ListView l,View v,int position,long id){
         super.onListItemClick(l, v, position, id);
         String nombreValue=activities[position];
+
         l.getChildAt(position).setBackgroundColor(Color.rgb(128, 128, 255));
         try{
             Class<?> clase=Class.forName("com.g06.bolsa.dato_estudio." + nombreValue);
