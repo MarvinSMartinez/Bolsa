@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Bolsa</string>
+
+    <string name="password">Enter your password</string>
+    <string name="btlogin">Login</string>
+    <string name="btllenarBaseDeDatos">Fill database</string>
+    <string name="btFacebook">Login Facebook</string>
+    <string name="ingrese_usuario">Enter your username</string>
+    <string name="title_activity_inicio">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome</string>
+    <string name="nav_header_subtitle">User</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="cerrar_sesion">Log out</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">My profile data</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="filtrar">Filter:</string>
+    <string name="buscar">SEARCH</string>
+    <string name="buscar_empleo">Search for a job offer</string>
+    <string name="datos_de_mi_perfil">My profile data</string>
+
+
+    <array name="tipo_empleos">
+        <item>Programming</item>
+
+    </array>
+
+    <!--Strings de empresa y oferta-->
+    <string name="imagen_perfil_empresa">Perfil</string>
+    <string name="imagen_ofertas">job offers</string>
+    <string name="btnInsertarOferta">Insert job offer</string>
+    <string name="btnEditarOferta">Edit job offer</string>
+    <string name="btnConsultarOferta">Check job offer</string>
+    <string name="btnEliminarOferta">Delete job offer</string>
+    <string name="idEmpresa">Company ID</string>
+    <string name="inicioOferta">start date of the Offer</string>
+    <string name="finOferta">Offer end date</string>
+    <string name="nombreOferta">Offer name</string>
+    <string name="title_activity_oferta_laboral_insertar">OfertaInsertarActivity</string>
+    <string name="title_activity_oferta_laboral_alumno_eliminar">OfertaEliminarActivity</string>
+    <string name="title_activity_oferta_laboral_alumno_actualizar">OfertaActualizarActivity</string>
+    <string name="title_activity_oferta_laboral_alumno_consultar">OfertaConsultarActivity</string>
+    <string name="idOferta">Job offer ID</string>
+    <!---->
+
+    <!--Strings aspirante-->
+    <string name="idAspirante">Applicant ID </string>
+    <string name="estado">Condition</string>
+    <string name="idDetalleOferta">Detail ID</string>
+    <string name="perfil">Profile</string>
+    <string name="salario">Salary</string>
+    <string-array name="estado">
+        <item>Aprobado</item>
+        <item>Rechazado</item>
+    </string-array>
+    <!---->
+
+    <!--Strings de detalle_experiencia -->
+    <string name="detalle_experiencia_idcandidato">Candidate</string>
+    <string name="detalle_experiencia_lugar_experiencia">Place where you got the experience</string>
+    <string name="detalle_experiencia_puesto">Position</string>
+    <string name="detalle_experiencia_tiempo">Time you worked</string>
+    <!--Strings de detalle_experiencia -->
+
+    <!--Strings de dato_estudio -->
+    <string name="dato_estudio">education data</string>
+    <string name="nivel_estudio">education level</string>
+    <string name="institucionId">institution ID</string>
+    <string name="candidato_id">Candidate ID</string>
+    <!--Strings de dato_estudio -->
+
+    <!--Strings de contacto_aspirante -->
+    <string name="dato_contactos">Contacts</string>
+    <string name="contacto_id">Contact ID</string>
+    <string name="telefono1">Telephone 1</string>
+    <string name="telefono2">Telephone 2</string>
+    <string name="correo">email</string>
+    <!--Strings de contacto_aspirante -->
+
+    <string name="opciones">Options</string>
+    <string name="insertar">Insert</string>
+    <string name="limpiar">Clean fields</string>
+    <string name="eliminar">Delete</string>
+    <string name="actualizar">Update</string>
+    <string name="consultar">Check record</string>
+    <string name="perfil_usuario">User profile</string>
+
+</resources>
