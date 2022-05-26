@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.g06.bolsa.clases_auxiliares.ContactoAspirante;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 import com.g06.bolsa.clases_auxiliares.Usuario;
 import com.g06.bolsa.clases_auxiliares.Departamento;
 import com.g06.bolsa.clases_auxiliares.Municipio;
@@ -128,7 +129,7 @@ public class ControlBDLJ16001 {
 
         ContentValues municipioCV = new ContentValues();
 
-        municipioCV.put("id_municipio", municipio.getId());
+        municipioCV.put("ID_MUNICIPIP", municipio.getId());
         municipioCV.put("nombre_municipio", municipio.getNombre());
         municipioCV.put("id_departamento", municipio.getIdDepartamento());
 
@@ -201,6 +202,31 @@ public class ControlBDLJ16001 {
 
             contador = db.insert("CONTACTO_ASPIRANTE", null, alum);
         }
+        if(contador==-1 || contador==0)
+        {
+            regInsertados= "Error al Insertar el registro: Verificar inserción";
+        }
+        else {
+            regInsertados=regInsertados+contador;
+        }
+        return regInsertados;
+    }
+    //PERFIL_CANDIDATO (ID_CANDIDATO CHAR(2) not null,ID_DEPARTAMENTO CHAR(4),ID_USUARIO CHAR(4),NOMBRES_CANDIDATO CHAR(32) not null,APELLIDOS_CANIDATO CHAR(32) not null,DUI_CANDIDATO CHAR(10) not null,NIT_CANDIDATO CHAR(17) not null
+    public String insertar(PerfilCandidato de) {
+        String regInsertados="Registro Insertado Nº= ";
+        long contador=0;
+        //if (verificarIntegridad(de,3)) {
+            ContentValues alum = new ContentValues();
+            alum.put("ID_CANDIDATO", de.getIdperfilcandidato());
+            alum.put("ID_DEPARTAMENTO ", de.getIddepartamento());
+            alum.put("ID_USUARIO", de.getIdusuario());
+            alum.put("NOMBRES_CANDIDATO", de.getNombre());
+            alum.put("APELLIDOS_CANIDATO", de.getApellido());
+            alum.put("DUI_CANDIDATO", de.getDui());
+            alum.put("NIT_CANDIDATO", de.getNit());
+
+            contador = db.insert("PERFIL_CANDIDATO", null, alum);
+       // }
         if(contador==-1 || contador==0)
         {
             regInsertados= "Error al Insertar el registro: Verificar inserción";
@@ -467,7 +493,7 @@ public class ControlBDLJ16001 {
             }
             case 4:
             {
-                //verificar que al modificar DATO_ESTUDIO exista el candidato y la institucion.
+                //verificar que al modificar o crear DATO_ESTUDIO exista el candidato y la institucion.
                 //CONTACTO_ASPIRANTE (ID_CONTACTO
                 //INSTITUCION_EDUCATIVA (ID_INSTITUCION CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),NOMBRE_INSTITUCION CHAR(32) not null,primary key (ID_INSTITUCION),foreign key (ID_DEPARTAMENTO) references DEPARTAMENTO (ID_DEPARTAMENTO));
                 DatoEstudio de= (DatoEstudio) dato;
@@ -502,10 +528,34 @@ public class ControlBDLJ16001 {
         final String[] VNombreMunicipio = {"Tonacatepeque","Soyapango","Apopa","Ciudad Barrios"};
         final String[] VIDDep = {"7","7","7","10"};
 
+        //PERFIL_CANDIDATO (ID_CANDIDATO CHAR(2) not null,ID_DEPARTAMENTO CHAR(4),ID_USUARIO CHAR(4),NOMBRES_CANDIDATO CHAR(32) not null,APELLIDOS_CANIDATO CHAR(32) not null,DUI_CANDIDATO CHAR(10) not null,NIT_CANDIDATO CHAR(17) not null
+        final String[] VID_CANDIDATO = {"1","2","3"};
+        final String[] VID_DEPARTAMENTO = {"1","2","3"};
+        final String[] VID_USUARIO = {"1","2","3"};
+        final String[] VNOMBRES_CANDIDATO  = {"Carlos","Pedro","Universidad"};
+        final String[] VAPELLIDOS_CANIDATO = {"Perez","Perez","Perez"};
+        final String[] VIDUI_CANDIDATO = {"7543534","745354","754543"};
+        final String[] VNIT_CANDIDATO = {"7","7","7"};
+
         abrir();
         db.execSQL("DELETE FROM usuario");
         db.execSQL("DELETE FROM departamento");
         db.execSQL("DELETE FROM municipio");
+        db.execSQL("DELETE FROM PERFIL_CANDIDATO");
+
+        PerfilCandidato usuariow = new PerfilCandidato();
+
+        for (int i=0;i<3;i++) {
+            usuariow.setIdperfilcandidato(VID_CANDIDATO[i]);
+            usuariow.setIddepartamento(VID_DEPARTAMENTO[i]);
+            usuariow.setIdusuario(VID_USUARIO[i]);
+            usuariow.setNombre(VNOMBRES_CANDIDATO[i]);
+            usuariow.setApellido(VAPELLIDOS_CANIDATO[i]);
+            usuariow.setDui(VIDUI_CANDIDATO[i]);
+            usuariow.setNit(VNIT_CANDIDATO[i]);
+
+            insertar(usuariow);
+        }
 
 
         Usuario usuario = new Usuario();
