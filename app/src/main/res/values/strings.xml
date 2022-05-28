@@ -27,6 +27,28 @@
         <item>Programación</item>
 
     </array>
+    <string-array name="departamentos_array">
+        <item>Ahuachanpan</item>
+        <item>Cabañas</item>
+        <item>Chalatenango</item>
+        <item>Cuscatlan</item>
+        <item>La Libertad</item>
+        <item>Morazan</item>
+        <item>San Salvador</item>
+        <item>La Paz</item>
+        <item>Santa Ana</item>
+        <item>San Miguel</item>
+        <item>Sonsonate</item>
+        <item>San Vicente</item>
+        <item>La Union</item>
+        <item>Usulutan</item>
+    </string-array>
+    <string-array name="municipios_array">
+        <item>Tonacatepeque</item>
+        <item>Soyapango</item>
+        <item>Apopa</item>
+        <item>Ciudad Barrios</item>
+    </string-array>
 
     <!--Strings de empresa y oferta-->
     <string name="imagen_perfil_empresa">Perfil</string>

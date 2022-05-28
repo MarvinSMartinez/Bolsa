@@ -27,6 +27,17 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        Button bperfil = (Button) root.findViewById(R.id.button_dato_personal);
+        bperfil.setOnClickListener((View view) -> {
+            try {
+                Class<?> clase = Class.forName("com.g06.bolsa.datosPerfil.DatosPerMenuActivity");
+                Intent intent = new Intent(getActivity(), clase);
+                this.startActivity(intent);
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
         Button b1 = (Button) root.findViewById(R.id.id_button_experiencia);
         b1.setOnClickListener((View view) -> {
             try {
@@ -62,8 +73,6 @@ public class GalleryFragment extends Fragment {
                 e.printStackTrace();
             }
         });
-
-
         //final TextView textView = binding.textGallery;
        // galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
