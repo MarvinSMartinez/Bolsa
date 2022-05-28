@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".detalle_aplicacion.DetalleAplicacionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_aplicacion.DetalleAplicacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_aplicacion.DetalleAplicacionEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_aplicacion.DetalleAplicacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detalle_aplicacion.DetalleAplicacionMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".departamento.DepartamentoMenuActivity"
             android:exported="false" />
         <activity

@@ -63,6 +63,19 @@ public class GalleryFragment extends Fragment {
             }
         });
 
+        Button b4 = (Button) root.findViewById(R.id.id_button_aplicacion);
+        b4.setOnClickListener((View view) -> {
+            try {
+                Class<?> clase = Class.forName("com.g06.bolsa.detalle_aplicacion.DetalleAplicacionMenuActivity");
+                Intent intent = new Intent(getActivity(), clase);
+                this.startActivity(intent);
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+
+
 
         //final TextView textView = binding.textGallery;
        // galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.g06.bolsa.clases_auxiliares.ContactoAspirante;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
+import com.g06.bolsa.clases_auxiliares.DetalleAplicacion;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 import com.g06.bolsa.clases_auxiliares.InstitucionEducativa;
 import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
@@ -260,6 +261,28 @@ public class ControlBDLJ16001 {
     }
     //INSTITUCION_EDUCATIVA (ID_INSTITUCION CHAR(4) not null,ID_DEPARTAMENTO CHAR(4),NOMBRE_INSTITUCION CHAR(32) not null,
 
+    //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+    public String insertar(DetalleAplicacion municipio) {
+        String registrosInsertados="Registro insertado Nº= ";
+        long contador = 0;
+        if (verificarIntegridad(municipio,6)) {
+            ContentValues municipioCV = new ContentValues();
+
+            municipioCV.put("ID_APLICACION", municipio.getId());
+            municipioCV.put("ID_CANDIDATO", municipio.getIdCandidato());
+            municipioCV.put("ESTADO_APLICACION", municipio.getEstado());
+
+
+            contador = db.insert("DETALLE_APLICACION", null, municipioCV);
+        }
+        if (contador==-1 || contador==0) {
+            registrosInsertados = "Error al insertar el registro. Verificar inserción";
+        }
+        else {
+            registrosInsertados = registrosInsertados + contador;
+        }
+        return registrosInsertados;
+    }
     /* Fin métodos para insertar. */
 
     /* Inicio métodos para actualizar. */
@@ -324,6 +347,26 @@ public class ControlBDLJ16001 {
             return "Contacto no existe";
         }
     }
+
+    //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+    public String actualizar(DetalleAplicacion de){
+        //verificamos que exista el id del candidato en la tabla candidato.
+        if (verificarIntegridad(de, 6)) {
+            //Si existe, actualizamos.
+            String[] id = {de.getId()};
+            ContentValues cv = new ContentValues();
+            //cv.put("ID_APLICACION", de.getIdCandidato());/si se intenta cambiar dara error
+            cv.put("ID_CANDIDATO", de.getIdCandidato());
+            cv.put("ESTADO_APLICACION", de.getEstado());
+
+            //CONTACTO_ASPIRANTE (ID_CONTACTO CHAR(4) not null,ID_CANDIDATO CHAR(2),TELEFONO1_CONTACTO CHAR(8) not null,TELEFONO2_CONTACTO   CHAR(8) not null,CORRE_CONTACTO CHAR(8) not null,primary key (ID_CONTACTO),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO))
+
+            db.update("DETALLE_APLICACION", cv, "ID_APLICACION = ?", id);
+            return "Detalle de aplicación actualizado correctamente";
+        }else{
+            return "Detalle de aplicación no existe";
+        }
+    }
     /* Fin métodos para actualizar. */
 
 
@@ -355,6 +398,19 @@ public class ControlBDLJ16001 {
         return regAfectados;
     }
 
+    //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+    public String eliminar(DetalleAplicacion de){
+
+        String regAfectados="filas afectadas= ";
+        int contador = 0;
+        if (verificarIntegridad(de, 5)) {
+            return "Existen registros asociados.";
+        }
+        String where = "ID_APLICACION='" + de.getId() + "'";
+        contador += db.delete("DETALLE_APLICACION", where, null);
+        regAfectados += contador;
+        return regAfectados;
+    }
     /* Fin métodos para eliminar. */
 
     /* Inicio métodos para consultar. */
@@ -467,6 +523,27 @@ public class ControlBDLJ16001 {
             return null;
         }
     }
+
+    //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+    public DetalleAplicacion consultarDetalleAplicacion(String id) {
+        String[] ids = {id};
+        Cursor cursor = db.query("DETALLE_APLICACION",
+                new String[] {"ID_APLICACION","ID_CANDIDATO","ESTADO_APLICACION"},
+                "ID_APLICACION = ?",
+                ids, null, null, null);
+
+        if(cursor.moveToFirst()){
+            DetalleAplicacion alumno = new DetalleAplicacion();
+
+            alumno.setId(cursor.getString(0));
+            alumno.setIdCandidato(cursor.getString(1));
+            alumno.setEstado(cursor.getString(2));
+
+            return alumno;
+        }else{
+            return null;
+        }
+    }
     /* Fin métodos para consultar. */
 
 //PERFIL_CANDIDATO (ID_CANDIDATO CHAR(2) not null,ID_DEPARTAMENTO CHAR(4),ID_USUARIO CHAR(4),NOMBRES_CANDIDATO CHAR(32) not null,APELLIDOS_CANIDATO CHAR(32) not null,DUI_CANDIDATO CHAR(10) not null,NIT_CANDIDATO CHAR(17) not null
@@ -528,6 +605,35 @@ public class ControlBDLJ16001 {
                 Cursor c2 = db.query("INSTITUCION_EDUCATIVA", null, "ID_INSTITUCION = ?", id2,
                         null, null, null);
                 if(c.moveToFirst() && c2.moveToFirst()){
+                    //Se encontraron datos
+                    return true;
+                }
+                return false;
+            }
+            case 5:
+            {
+                //verificar que al eliminar DETALLE_APLICACION no existan registros en evaluacion que dependan de este.
+                //EVALUACION (ID_EVALUACION CHAR(4) not null,ID_APLICACION CHAR(4),TIPO_EVALUACION CHAR(32) not null,FECHA_EVALUACION DATE not null,ESTADO_EVALUACION CHAR(32)
+                //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+                DetalleAplicacion de= (DetalleAplicacion) dato;
+                String[] ids = {de.getId()};
+                abrir();
+                Cursor c = db.query("EVALUACION", null, "ID_APLICACION = ?", ids, null, null, null);
+                if(c.moveToFirst()) {
+                    //Se encontraron datos
+                    return true;
+                }
+                return false;
+            }
+            case 6:
+            {
+                //verificar que al modificar o crear DETALLE_APLICACION exista el candidato.
+                //DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));
+                DetalleAplicacion de= (DetalleAplicacion) dato;
+                String[] ids = {de.getIdCandidato()};
+                abrir();
+                Cursor c = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", ids, null, null, null);
+                if(c.moveToFirst()){
                     //Se encontraron datos
                     return true;
                 }
