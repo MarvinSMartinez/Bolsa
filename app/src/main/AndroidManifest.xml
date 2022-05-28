@@ -39,7 +39,22 @@
             android:name=".departamento.DepartamentoConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".departamento.DepartamentoActualizarActivity"
+            android:name=".departamento.DepartamentoActualizarActivity"/>
+
+        <activity
+            android:name=".datosPerfil.DatosPerMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".datosPerfil.DatosPerActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".datosPerfil.DatosPerInsertar"
+            android:exported="false" />
+        <activity
+            android:name=".datosPerfil.DatosPerConsultar"
+            android:exported="false" />
+        <activity
+            android:name=".datosPerfil.DatosPerEliminar"
             android:exported="false" />
         <activity
             android:name=".contacto_aspirante.ContactoAspiranteActualizarActivity"
