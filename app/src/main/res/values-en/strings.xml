@@ -87,5 +87,7 @@
     <string name="actualizar">Update</string>
     <string name="consultar">Check record</string>
     <string name="perfil_usuario">User profile</string>
-
+    <!--Strings de Departamento-->
+    <string name="Id_departamento">ID Department:</string>
+    <string name="Nombre_departamento">Name Department:</string>
 </resources>

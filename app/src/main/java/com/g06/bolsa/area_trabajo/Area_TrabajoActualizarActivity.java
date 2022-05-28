@@ -20,8 +20,8 @@ public class Area_TrabajoActualizarActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_trabajo_actualizar);
 
-        idAreaTrabajo = findViewById(R.id.editIdDepartamento);
-        nombreAreaTrabajo = findViewById(R.id.editNombreDepartamento);
+        idAreaTrabajo = findViewById(R.id.editIdAreaTrabajo);
+        nombreAreaTrabajo = findViewById(R.id.editNombreAreaTrabajo);
     }
     public void actualizarArea_Trabajo(View v) {
         Area_Trabajo area = new Area_Trabajo();

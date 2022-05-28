@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".area_trabajo.Area_TrabajoMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".area_trabajo.Area_TrabajoInsertarActivity"
             android:exported="false" />
         <activity

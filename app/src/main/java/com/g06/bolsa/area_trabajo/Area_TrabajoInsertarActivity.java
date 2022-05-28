@@ -25,7 +25,7 @@ public class Area_TrabajoInsertarActivity extends Activity {
         idAreaTrabajo = findViewById(R.id.dptIdInsertar);
         nombreAreaTrabajo = findViewById(R.id.dptnombreInsertar);
     }
-    public void insertarArea_AreaTrabajo(View v) {
+    public void insertarArea_Trabajo(View v) {
         String insertarIdArea = idAreaTrabajo.getText().toString();
         String insertarNombreArea = nombreAreaTrabajo.getText().toString();
         String regInsertados;

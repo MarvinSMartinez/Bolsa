@@ -87,9 +87,20 @@
     <string name="actualizar">Actualizar</string>
     <string name="consultar">Consultar</string>
     <string name="perfil_usuario">Perfil de Usuario</string>
-
+    <!--Strings de Adeministrador-->
+    <string name="Departamento">Departamento</string>
+    <string name="Area_Trabajo">Area Trabajo</string>
+    <string name="Candidatos">Candidato</string>
+    <string name="Empresas">Empresas</string>
+    <string name="Ofertas">Ofertas</string>
+    <string name="Administrador">Pantalla Administrador</string>
+    <string name="Administradores">Administradores</string>
+    <string name="Opciones_de_Edicion">Opciones de Edicion</string>
     <!--Strings de Departamento-->
-    <string name="Id_departamento">ID Deprtamento:</string>
-
+    <string name="Id_departamento">ID Departamento:</string>
+    <string name="Nombre_departamento">Nombre Departamento:</string>
+    <!--Strings de Area Trabajo-->
+    <string name="Id_AreaTrabajo">ID Area Trabajo:</string>
+    <string name="Nombre_AreaTrabajo">Nombre Area Trabajo:</string>
 
 </resources>
