@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".departamento.DepartamentoConsultarActivity">
+    tools:context=".area_trabajo.Area_TrabajoConsultarActivity">
 
     <TextView
         android:id="@+id/txtDepartamento"
@@ -14,8 +14,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/Id_departamento"
-        app:layout_constraintBottom_toTopOf="@+id/idDepartamento"
+        android:text="@string/Id_AreaTrabajo"
+        app:layout_constraintBottom_toTopOf="@+id/idAreaTrabajo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,14 +28,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/Nombre_departamento"
-        app:layout_constraintBottom_toTopOf="@+id/nombreDepartamento"
+        android:text="@string/Nombre_AreaTrabajo"
+        app:layout_constraintBottom_toTopOf="@+id/nombreAreaTrabajo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idDepartamento" />
+        app:layout_constraintTop_toBottomOf="@+id/idAreaTrabajo" />
 
     <EditText
-        android:id="@+id/nombreDepartamento"
+        android:id="@+id/nombreAreaTrabajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDepartamento2" />
 
     <EditText
-        android:id="@+id/idDepartamento"
+        android:id="@+id/idAreaTrabajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,10 +72,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="128dp"
-        android:onClick="consultarDepartamento"
+        android:onClick="consultarArea_Trabajo"
         android:text="@string/consultar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreDepartamento" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreAreaTrabajo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.g06.bolsa.departamento;
+package com.g06.bolsa.area_trabajo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,18 +10,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.g06.bolsa.R;
+public class Area_TrabajoMenuActivity extends ListActivity {
+    String[] MENU={"Insertar Area Trabajo","Eliminar Area Trabajo","Consultar Area Trabajo","Actualizar Area Trabajo"};
 
-
-public class DepartamentoMenuActivity extends ListActivity {
-    String[] MENU={"Insertar Departamento","Eliminar Departamento","Consultar Departamento","Actualizar Departamento"};
-
-    String[] ACTIVITIES={"DepartamentoInsertarActivity","DepartamentoEliminarActivity","DepartamentoConsultarActivity","DepartamentoActualizarActivity"};
+    String[] ACTIVITIES={"Area_TrabajoInsertarActivity","Area_TrabajoEliminarActivity","Area_TrabajoConsultarActivity","Area_TrabajoActualizarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);
         ListView listView = getListView();
-        listView.setBackgroundColor(Color.rgb(75, 50, 75));
+        listView.setBackgroundColor(Color.rgb(75, 50, 150));
         ArrayAdapter<String> adapter = new
                 ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, MENU);
         setListAdapter(adapter);
@@ -33,7 +30,7 @@ public class DepartamentoMenuActivity extends ListActivity {
         String nombreValue=ACTIVITIES[position];
         l.getChildAt(position).setBackgroundColor(Color.rgb(128, 128, 255));
         try{
-            Class<?> clase=Class.forName("com.g06.bolsa.departamento." + nombreValue);
+            Class<?> clase=Class.forName("com.g06.bolsa.area_trabajo." + nombreValue);
             Intent inte = new Intent(this,clase);
             this.startActivity(inte);
         }catch(ClassNotFoundException e){
