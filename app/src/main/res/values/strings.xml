@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Bolsa</string>
 
-    <string name="password">Ingrese password</string>
-    <string name="btlogin">login</string>
+    <string name="password">Ingrese su contraseña</string>
+    <string name="btlogin">Iniciar sesión</string>
     <string name="btllenarBaseDeDatos">Llenar base de datos</string>
     <string name="btFacebook">Login Facebook</string>
-    <string name="ingrese_usuario">Ingrese usuario</string>
+    <string name="ingrese_usuario">Ingrese su usuario</string>
     <string name="title_activity_inicio">Inicio</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,15 +14,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Datos de mi perfil</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="filtrar">Filtrar:</string>
     <string name="buscar">BUSCAR</string>
     <string name="buscar_empleo">Buscar empleo</string>
+    <string name="datos_de_mi_perfil">Datos de mi perfil</string>
+
 
     <array name="tipo_empleos">
-        <item>Programacion</item>
+        <item>Programación</item>
 
     </array>
 
@@ -80,9 +82,10 @@
 
     <string name="opciones">Opciones</string>
     <string name="insertar">Insertar</string>
-    <string name="limpiar">Limpiar</string>
+    <string name="limpiar">Limpiar campos</string>
     <string name="eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
     <string name="consultar">Consultar</string>
+    <string name="perfil_usuario">Perfil de Usuario</string>
 
 </resources>

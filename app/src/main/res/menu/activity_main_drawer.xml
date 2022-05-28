@@ -11,7 +11,7 @@ tools:showIn="navigation_view">
     <item
         android:id="@+id/nav_gallery"
         android:icon="@drawable/ic_laboral"
-        android:title="Datos de Mi perfil" />
+        android:title="@string/datos_de_mi_perfil" />
 
 
 

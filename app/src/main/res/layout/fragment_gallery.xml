@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:gravity="center_horizontal"
         android:paddingTop="35dp"
-        android:text="Perfil de Usuario"
+        android:text="@string/perfil_usuario"
         android:textColor="@color/black"
         android:textSize="20dp"/>
 
@@ -63,7 +63,4 @@
         android:background="@color/azulcaja"
         android:text="@string/dato_contactos"
         />
-
-
-
 </LinearLayout>
