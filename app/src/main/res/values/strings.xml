@@ -88,4 +88,8 @@
     <string name="consultar">Consultar</string>
     <string name="perfil_usuario">Perfil de Usuario</string>
 
+    <!--Strings de Departamento-->
+    <string name="Id_departamento">ID Deprtamento:</string>
+
+
 </resources>

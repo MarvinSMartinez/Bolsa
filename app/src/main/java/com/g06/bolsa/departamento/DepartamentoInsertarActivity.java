@@ -38,7 +38,7 @@ public class DepartamentoInsertarActivity extends Activity {
             departamento.setId(insertaridDepartamento);
             departamento.setNombre(inseratarnombreDepartamento);
         DBHelper.abrir();
-        regInsertados = DBHelper.InsertarDepartamento(departamento);
+        regInsertados = DBHelper.insertarDepartamento(departamento);
         DBHelper.cerrar();
         Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
     }

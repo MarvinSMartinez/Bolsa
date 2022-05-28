@@ -36,7 +36,7 @@ public class DepartamentoActualizarActivity extends AppCompatActivity {
         departamento.setNombre(nombreDepartamento.getText().toString());
 
         DBHelper.abrir();
-        String estado = DBHelper.ActualizarDepartamento(departamento);
+        String estado = DBHelper.actualizarDepartamento(departamento);
         DBHelper.cerrar();
 
         Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();

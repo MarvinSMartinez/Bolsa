@@ -55,7 +55,7 @@ public class ControlDepartamento {
         DBHelper.close();
     }
 
-    public String InsertarDepartamento(Departamento departamento) {
+    public String insertarDepartamento(Departamento departamento) {
         String registrosInsertados = "Registro insertado Nº= ";
         long contador = 0;
         ContentValues values = new ContentValues();
@@ -72,12 +72,12 @@ public class ControlDepartamento {
         return registrosInsertados;
     }
 
-    public String ActualizarDepartamento(Departamento departamento) {
+    public String actualizarDepartamento(Departamento departamento) {
         if (verificarIntegridad(departamento, 1)) {
             String[] id = {departamento.getId()};
             ContentValues values = new ContentValues();
             values.put("NOMBRE_DEPARTAMENTO", departamento.getNombre());
-            db.update("OFERTA_LABORAL", values, "id_oferta = ?", id);
+            db.update("DEPARTAMENTO", values, "id_oferta = ?", id);
             return "Registro Actualizado Correctamente";
         } else {
             return "Registro con carnet " + departamento.getId() + " no existe";
@@ -108,10 +108,10 @@ public class ControlDepartamento {
         switch (relacion) {
             case 1: {
                 //verificar que exista departamento
-                OfertaLaboral ofertaLaboral = (OfertaLaboral) dato;
-                String[] id = {ofertaLaboral.getIdOferta()};
+                Departamento departamento = (Departamento) dato;
+                String[] id = {departamento.getId()};
                 ;
-                Cursor c2 = db.query("OFERTA_LABORAL", null, "id_oferta = ?", id, null, null,
+                Cursor c2 = db.query("DEPARTAMENTO", null, "ID_DEPARTAMENTO = ?", id, null, null,
                         null);
                 if (c2.moveToFirst()) {
                     //Se encontro oferta
