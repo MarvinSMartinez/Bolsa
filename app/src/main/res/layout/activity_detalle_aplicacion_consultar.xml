@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:background="@color/caja"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/id_aplicacion"
+        android:minHeight="48dp"
+        android:textColor="#455A64"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/editIdAplicacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLength="7"
+        android:minHeight="48dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/botonConsultar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/consultar"
+            android:onClick="consultar"/>
+        <Button
+            android:id="@+id/botonLimpiar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/limpiar"
+            android:onClick="limpiarTexto"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/candidato_id"
+        android:minHeight="48dp"
+        android:textColor="#455A64"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/editCandidatoId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="text"
+        android:longClickable="false"
+        android:minHeight="48dp" />
+
+    <TextView android:text="@string/estadoaplicacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#455A64"
+        android:minHeight="48dp"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/editEstado"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp" />
+</LinearLayout>

@@ -21,7 +21,7 @@ public class DatosPerMenuActivity extends ListActivity {
 
     String[] activities={
             "DatosPerInsertar",
-            "DatosPerElimninar",
+            "DatosPerEliminar",
             "DatosPerConsultar",
             "DatosPerActualizarActivity"};
     @Override
