@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Bolsa</string>
 
     <string name="password">Ingrese su contraseña</string>
@@ -43,7 +43,7 @@
     <string name="title_activity_oferta_laboral_alumno_eliminar">OfertaEliminarActivity</string>
     <string name="title_activity_oferta_laboral_alumno_actualizar">OfertaActualizarActivity</string>
     <string name="title_activity_oferta_laboral_alumno_consultar">OfertaConsultarActivity</string>
-    <string name="idOferta">id Oferta</string>
+    <string name="idOferta">Id Oferta</string>
     <!---->
 
     <!--Strings aspirante-->
@@ -88,4 +88,16 @@
     <string name="consultar">Consultar</string>
     <string name="perfil_usuario">Perfil de Usuario</string>
 
+    <!--Strings de puesto-empresa -->
+    <string name="idPuesto">Id Puesto</string>
+    <string name="nombrePuesto">Nombre Puesto</string>
+    <string name="numPuesto">Numeros de Puesto</string>
+    <string name="idArea">Id Area</string>
+
+    <!--Strings de evaluacion-empresa -->
+    <string name="idEva">Id Evaluacion</string>
+    <string name="idApp">Id Aplicacion</string>
+    <string name="tipo">Tipo de Evaluacion</string>
+    <string name="fecha">Fecha de Evaluacion</string>
+    <string name="estadoEva">Estado de Evaluacion</string>
 </resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="30dip"
+    android:stretchColumns="1">
+    <TableRow>
+        <TextView android:text="@string/idEva"/>
+        <EditText
+            android:id="@+id/editIdEvaluacion"
+            android:inputType="text"
+            android:maxLength="4" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/idApp"/>
+        <EditText
+            android:id="@+id/editIdApp"
+            android:inputType="text"
+            android:maxLength="4" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/tipo"/>
+        <EditText
+            android:id="@+id/editTipoEva"
+            android:inputType="text"
+            android:maxLength="32" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/fecha"/>
+        <EditText
+            android:id="@+id/editFechaEva"
+            android:inputType="date" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/estadoEva" />
+        <EditText
+            android:id="@+id/editEstadoEva"
+            android:inputType="text"
+            android:maxLength="32" />
+    </TableRow>
+    <TableRow>
+        <TextView/>
+    </TableRow>
+    <TableRow>
+        <TextView/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/opciones" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:onClick="insertarEvaluacion"
+            android:text="@string/insertar" />
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="@string/limpiar" />
+    </TableRow>
+</TableLayout>

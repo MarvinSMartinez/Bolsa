@@ -88,4 +88,17 @@
     <string name="consultar">Check record</string>
     <string name="perfil_usuario">User profile</string>
 
+    <!--Strings de puesto-empresa -->
+    <string name="idPuesto">Job ID</string>
+    <string name="nombrePuesto">Job Name</string>
+    <string name="numPuesto">Number of Vacancies</string>
+    <string name="idArea">Area ID</string>
+
+    <!--Strings de evaluacion-empresa -->
+    <string name="idEva">Id Evaluacion</string>
+    <string name="idApp">Id Aplicacion</string>
+    <string name="tipo">Tipo de Evaluacion</string>
+    <string name="fecha">Fecha de Evaluacion</string>
+    <string name="estadoEva">Estado de Evaluacion</string>
+
 </resources>

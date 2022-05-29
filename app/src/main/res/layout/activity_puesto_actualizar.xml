@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:background="@color/caja"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/idPuesto"
+        android:textColor="#455A64" />
+
+    <EditText
+        android:id="@+id/editIdPuesto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLength="4"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/idOferta"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editIdOferta"
+        android:inputType="text"
+        android:maxLength="4"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/idArea"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editIdArea"
+        android:inputType="text"
+        android:maxLength="4"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/nombrePuesto"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editNombrePuesto"
+        android:inputType="text"
+        android:maxLength="32"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/numPuesto"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editNumPuesto"
+        android:inputType="text"
+        android:maxLength="4"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="@string/opciones"
+        android:textColor="#455A64" />
+
+    <Button
+        android:onClick="actualizarPuesto"
+        android:text="@string/actualizar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="limpiarTexto"
+        android:text="@string/limpiar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

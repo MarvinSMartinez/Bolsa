@@ -12,6 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".EvaluacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EvaluacionEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EvaluacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EvaluacionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuestoConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuestoEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuestoActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuestoInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EvaluacionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PuestoMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".departamento.DepartamentoMenuActivity"
             android:exported="false" />
         <activity

@@ -14,9 +14,9 @@ import android.widget.Toast;
 public class InicioEmpresaActivity extends ListActivity {
 
 
-    String[] menu={"Oferta Laboral","Detalle de Oferta", "Aspirante"};
+    String[] menu={"Oferta Laboral","Detalle de Oferta", "Aspirantes","Puestos","Evaluaciones"};
     String[]
-            activities={"OfertaMenuActivity","DetalleOfertaMenuActivity", "AspiranteMenuActivity"};
+            activities={"OfertaMenuActivity","DetalleOfertaMenuActivity", "AspiranteMenuActivity","PuestoMenuActivity","EvaluacionMenuActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
