@@ -27,6 +27,28 @@
         <item>Programación</item>
 
     </array>
+    <string-array name="departamentos_array">
+        <item>Ahuachanpan</item>
+        <item>Cabañas</item>
+        <item>Chalatenango</item>
+        <item>Cuscatlan</item>
+        <item>La Libertad</item>
+        <item>Morazan</item>
+        <item>San Salvador</item>
+        <item>La Paz</item>
+        <item>Santa Ana</item>
+        <item>San Miguel</item>
+        <item>Sonsonate</item>
+        <item>San Vicente</item>
+        <item>La Union</item>
+        <item>Usulutan</item>
+    </string-array>
+    <string-array name="municipios_array">
+        <item>Tonacatepeque</item>
+        <item>Soyapango</item>
+        <item>Apopa</item>
+        <item>Ciudad Barrios</item>
+    </string-array>
 
     <!--Strings de empresa y oferta-->
     <string name="imagen_perfil_empresa">Perfil</string>
@@ -80,13 +102,35 @@
     <string name="correo">Correo electrónico</string>
     <!--Strings de contacto_aspirante -->
 
+    <!--Strings de detalle_aplicacion -->
+    <string name="detalle_aplicacion">Aplicaciones</string>
+    <string name="id_aplicacion">Identificador detalle aplicación</string>
+    <!-- <string name="candidato_id">Identificador del candidato</string> -->
+    <string name="estadoaplicacion">Estado de la aplicación</string>
+    <!--Strings de detalle_aplicacion -->
+
     <string name="opciones">Opciones</string>
     <string name="insertar">Insertar</string>
     <string name="limpiar">Limpiar campos</string>
     <string name="eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
     <string name="consultar">Consultar</string>
-    <string name="perfil_usuario">Perfil de Usuario</string>
+    <string name="perfil_usuario">Informacion de perfil del aplicante</string>
+    <!--Strings de Adeministrador-->
+    <string name="Departamento">Departamento</string>
+    <string name="Area_Trabajo">Area Trabajo</string>
+    <string name="Candidatos">Candidato</string>
+    <string name="Empresas">Empresas</string>
+    <string name="Ofertas">Ofertas</string>
+    <string name="Administrador">Pantalla Administrador</string>
+    <string name="Administradores">Administradores</string>
+    <string name="Opciones_de_Edicion">Opciones de Edicion</string>
+    <!--Strings de Departamento-->
+    <string name="Id_departamento">ID Departamento:</string>
+    <string name="Nombre_departamento">Nombre Departamento:</string>
+    <!--Strings de Area Trabajo-->
+    <string name="Id_AreaTrabajo">ID Area Trabajo:</string>
+    <string name="Nombre_AreaTrabajo">Nombre Area Trabajo:</string>
 
     <!--Strings de puesto-empresa -->
     <string name="idPuesto">Id Puesto</string>

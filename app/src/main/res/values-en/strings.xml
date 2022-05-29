@@ -80,6 +80,13 @@
     <string name="correo">email</string>
     <!--Strings de contacto_aspirante -->
 
+    <!--Strings de detalle_aplicacion -->
+    <string name="detalle_aplicacion">Applications</string>
+    <string name="id_aplicacion">Application ID</string>
+    <!-- <string name="candidato_id">Identificador del candidato</string> -->
+    <string name="estadoaplicacion">Application Status</string>
+    <!--Strings de detalle_aplicacion -->
+
     <string name="opciones">Options</string>
     <string name="insertar">Insert</string>
     <string name="limpiar">Clean fields</string>
@@ -101,4 +108,7 @@
     <string name="fecha">Fecha de Evaluacion</string>
     <string name="estadoEva">Estado de Evaluacion</string>
 
+    <!--Strings de Departamento-->
+    <string name="Id_departamento">ID Department:</string>
+    <string name="Nombre_departamento">Name Department:</string>
 </resources>

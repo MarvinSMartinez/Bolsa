@@ -27,6 +27,17 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        Button bperfil = (Button) root.findViewById(R.id.button_dato_personal);
+        bperfil.setOnClickListener((View view) -> {
+            try {
+                Class<?> clase = Class.forName("com.g06.bolsa.datosPerfil.DatosPerMenuActivity");
+                Intent intent = new Intent(getActivity(), clase);
+                this.startActivity(intent);
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
         Button b1 = (Button) root.findViewById(R.id.id_button_experiencia);
         b1.setOnClickListener((View view) -> {
             try {
@@ -55,6 +66,19 @@ public class GalleryFragment extends Fragment {
         b3.setOnClickListener((View view) -> {
             try {
                 Class<?> clase = Class.forName("com.g06.bolsa.contacto_aspirante.ContactoAspiranteMenuActivity");
+                Intent intent = new Intent(getActivity(), clase);
+                this.startActivity(intent);
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        Button b4 = (Button) root.findViewById(R.id.id_button_aplicacion);
+        b4.setOnClickListener((View view) -> {
+            try {
+                Class<?> clase = Class.forName("com.g06.bolsa.detalle_aplicacion.DetalleAplicacionMenuActivity");
                 Intent intent = new Intent(getActivity(), clase);
                 this.startActivity(intent);
             }
