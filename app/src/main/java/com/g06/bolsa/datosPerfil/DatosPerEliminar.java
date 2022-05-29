@@ -18,13 +18,16 @@ import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 public class DatosPerEliminar extends Activity {
 
     ControlBDp helper;
-    TextView id;
+    EditText id;
     EditText nombreCandidato;
     EditText apellidoCandidato;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_per_eliminar);
+        helper = new ControlBDp(this);
+        id = findViewById(R.id.idperfilc);
+
     }
     public void eliminardp(View view) {
         String regEliminadas;
@@ -38,6 +41,7 @@ public class DatosPerEliminar extends Activity {
         Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
     }
     public void limpiaredp(View view) {
+        id.setText("");
         nombreCandidato.setText("");
         apellidoCandidato.setText("");
     }

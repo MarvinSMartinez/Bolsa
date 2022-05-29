@@ -19,7 +19,7 @@ import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 public class DatosPerConsultar extends Activity {
 
     ControlBDp helper;
-    TextView id;
+    EditText id;
     EditText nombreCandidato;
     EditText apellidoCandidato;
     @Override
@@ -31,18 +31,20 @@ public class DatosPerConsultar extends Activity {
         helper = new ControlBDp(this);
 
         // Referencia a los widgets de la interfaz.
+        id = findViewById(R.id.idperfilc);
         nombreCandidato = findViewById(R.id.anombre);
         apellidoCandidato = findViewById(R.id.aapellido);
     }
     public void consultar(View v) {
         helper.abrir();
-        DatoPerfil dp = helper.consultardp(nombreCandidato.getText().toString());
+        DatoPerfil dp = helper.consultardp(id.getText().toString());
         helper.cerrar();
 
         if (dp == null)
             Toast.makeText(this, "Dato no registrado",
                     Toast.LENGTH_LONG).show();
         else {
+            id.setText(String.valueOf(dp.getIdCandidato()));
             nombreCandidato.setText(String.valueOf(dp.getNombreCandidato()));
             apellidoCandidato.setText(String.valueOf(dp.getApellidoCandidato()));
         }
@@ -50,6 +52,7 @@ public class DatosPerConsultar extends Activity {
 
 
     public void limpiarcdp(View view) {
+        id.setText("");
         nombreCandidato.setText("");
         apellidoCandidato.setText("");
 
