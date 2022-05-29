@@ -40,6 +40,8 @@
             android:exported="false" />
         <activity
             android:name=".PuestoMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".detalle_aplicacion.DetalleAplicacionActualizarActivity"
             android:exported="false" />
         <activity
