@@ -15,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/Id_AreaTrabajo"
-        app:layout_constraintBottom_toTopOf="@+id/dptIdInsertar"
+        app:layout_constraintBottom_toTopOf="@+id/areatrabajoidinsertar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,10 +29,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/Nombre_AreaTrabajo"
-        app:layout_constraintBottom_toTopOf="@+id/dptnombreInsertar"
+        app:layout_constraintBottom_toTopOf="@+id/areatrabajonombreinsertar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dptIdInsertar" />
+        app:layout_constraintTop_toBottomOf="@+id/areatrabajoidinsertar" />
 
     <Button
         android:id="@+id/dptInsertar"
@@ -47,10 +47,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dptnombreInsertar" />
+        app:layout_constraintTop_toBottomOf="@+id/areatrabajonombreinsertar" />
 
     <EditText
-        android:id="@+id/dptnombreInsertar"
+        android:id="@+id/areatrabajonombreinsertar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/dptIdInsertar"
+        android:id="@+id/areatrabajoidinsertar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

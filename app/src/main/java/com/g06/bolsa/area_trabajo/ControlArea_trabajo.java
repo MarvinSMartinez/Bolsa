@@ -75,10 +75,10 @@ public class ControlArea_trabajo {
             String[] id = {area.getId()};
             ContentValues values = new ContentValues();
             values.put("NOMBRE_AREA", area.getNombre());
-            db.update("AREA_TRABAJO", values, "id_oferta = ?", id);
+            db.update("AREA_TRABAJO", values, "ID_AREA = ?", id);
             return "Registro Actualizado Correctamente";
         } else {
-            return "Registro con carnet " + area.getId() + " no existe";
+            return "Registro con  " + area.getId() + " no existe";
 
 
         }

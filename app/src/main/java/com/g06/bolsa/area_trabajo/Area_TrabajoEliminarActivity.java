@@ -24,8 +24,8 @@ public class Area_TrabajoEliminarActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_trabajo_eliminar);
         DBHelper = new ControlArea_trabajo(this);
-        idAreaTrabajo = findViewById(R.id.editEliminarIdDepartamento);
-        nombreAreaTrabajo= findViewById(R.id.editEliminarNombreDepartamento);
+        idAreaTrabajo = findViewById(R.id.editEliminarIdAreaTrabajo);
+        nombreAreaTrabajo= findViewById(R.id.editEliminarNombreAreaTrabajo);
     }
     public void eliminarArea_Trabajo(View v) {
         String regEliminadas;
@@ -38,7 +38,7 @@ public class Area_TrabajoEliminarActivity extends Activity {
 
         Toast.makeText(this, regEliminadas, Toast.LENGTH_SHORT).show();
     }
-    public void consultarArea_Trabajo(View v) {
+    public void consultarEliminarArea_Trabajo(View v) {
         DBHelper.abrir();
         Area_Trabajo area = DBHelper.consultarArea_Trabajo(idAreaTrabajo.getText().toString());
         DBHelper.cerrar();

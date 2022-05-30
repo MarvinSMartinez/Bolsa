@@ -19,7 +19,7 @@ public class Area_TrabajoActualizarActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_trabajo_actualizar);
-
+        DBHelper = new ControlArea_trabajo(this);
         idAreaTrabajo = findViewById(R.id.editIdAreaTrabajo);
         nombreAreaTrabajo = findViewById(R.id.editNombreAreaTrabajo);
     }
