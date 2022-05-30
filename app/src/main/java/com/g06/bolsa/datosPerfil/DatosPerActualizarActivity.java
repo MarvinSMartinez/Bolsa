@@ -24,9 +24,9 @@ import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
 public class DatosPerActualizarActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     ControlBDp helper;
+    EditText id;
     EditText nombreCandidato;
     EditText apellidoCandidato;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,7 @@ public class DatosPerActualizarActivity extends Activity implements AdapterView.
         helper = new ControlBDp(this);
 
         // Referencia a los widgets de la interfaz.
+        id = findViewById(R.id.idperfilc);
         nombreCandidato = findViewById(R.id.anombre);
         apellidoCandidato = findViewById(R.id.aapellido);
         //departamentos
@@ -60,23 +61,26 @@ public class DatosPerActualizarActivity extends Activity implements AdapterView.
         spinner.setOnItemSelectedListener(this);
         return view;
     }*/
-    public void actualizar(View v) {
+   /* public void actualizar(View v) {
         DatoPerfil dp = new DatoPerfil();
+        dp.setIdCandidato(id.getText().toString());
         dp.setNombreCandidato(nombreCandidato.getText().toString());
         dp.setApellidoCandidato(apellidoCandidato.getText().toString());
         helper.abrir();
         String estado = helper.actualizar(dp);
         helper.cerrar();
         Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
     public void limpiarT(View view) {
+        id.setText("");
         nombreCandidato.setText("");
         apellidoCandidato.setText("");
 
     }
     public void actualizardp(View view) {
         DatoPerfil de = new DatoPerfil();
+        de.setIdCandidato(id.getText().toString());
         de.setNombreCandidato(nombreCandidato.getText().toString());
         de.setApellidoCandidato(apellidoCandidato.getText().toString());
         helper.abrir();

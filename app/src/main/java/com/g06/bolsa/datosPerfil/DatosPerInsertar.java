@@ -20,6 +20,7 @@ import com.g06.bolsa.clases_auxiliares.DatoPerfil;
 public class DatosPerInsertar extends Activity implements AdapterView.OnItemSelectedListener{
 
     ControlBDp helper;
+    EditText idC;
     EditText nombreCandidato;
     EditText apellidoCandidato;
     @Override
@@ -28,6 +29,7 @@ public class DatosPerInsertar extends Activity implements AdapterView.OnItemSele
         setContentView(R.layout.activity_datos_per_insertar);
 
         helper = new ControlBDp(this);
+        idC=findViewById(R.id.idperfilc);
         nombreCandidato = findViewById(R.id.anombre);
         apellidoCandidato = findViewById(R.id.aapellido);
 
@@ -44,13 +46,15 @@ public class DatosPerInsertar extends Activity implements AdapterView.OnItemSele
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
     }
-    public void insertar(View v) {
+    public void insertardp(View view) {
+        String sid = idC.getText().toString();
         String nombrec = nombreCandidato.getText().toString();
         String apellidoc = apellidoCandidato.getText().toString();
 
         String regInsertados;
 
         DatoPerfil dp = new DatoPerfil();
+        dp.setIdCandidato(sid);
         dp.setNombreCandidato(nombrec);
         dp.setApellidoCandidato(apellidoc);
 
@@ -61,6 +65,7 @@ public class DatosPerInsertar extends Activity implements AdapterView.OnItemSele
     }
 
     public void limpiaridp(View view) {
+        idC.setText("");
         nombreCandidato.setText("");
         apellidoCandidato.setText("");
 
@@ -75,4 +80,6 @@ public class DatosPerInsertar extends Activity implements AdapterView.OnItemSele
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }

@@ -20,9 +20,11 @@
         android:layout_alignParentEnd="true"
         android:gravity="center_horizontal"
         android:paddingTop="35dp"
+        android:paddingBottom="35dp"
         android:text="@string/perfil_usuario"
         android:textColor="@color/black"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
+
 
     <Button
         android:id="@+id/button_dato_personal"
@@ -36,15 +38,25 @@
         android:id="@+id/id_button_experiencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/azulcaja"
+
         android:text="Datos de Experiencia" />
+
+    <Button
+        android:id="@+id/id_button_aplicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/azulcaja"
+        android:text="@string/detalle_aplicacion"
+        />
 
     <Button
         android:id="@+id/id_button_estudio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/azulcaja"
         android:text="@string/dato_estudio"
         />
@@ -52,7 +64,7 @@
         android:id="@+id/id_button_contactos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/azulcaja"
         android:text="@string/dato_contactos"
         />

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:background="@color/caja"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/id_aplicacion"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editIdAplicacion"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/candidato_id"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editCandidatoId"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:text="@string/estadoaplicacion"
+        android:textColor="#455A64" />
+    <EditText
+        android:id="@+id/editEstado"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="@string/opciones"
+        android:textColor="#455A64" />
+
+    <Button
+        android:onClick="insertar"
+        android:text="@string/insertar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="limpiarTexto"
+        android:text="@string/limpiar"
+        android:minHeight="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

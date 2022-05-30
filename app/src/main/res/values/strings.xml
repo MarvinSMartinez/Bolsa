@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Bolsa</string>
 
     <string name="password">Ingrese su contraseña</string>
@@ -65,7 +65,7 @@
     <string name="title_activity_oferta_laboral_alumno_eliminar">OfertaEliminarActivity</string>
     <string name="title_activity_oferta_laboral_alumno_actualizar">OfertaActualizarActivity</string>
     <string name="title_activity_oferta_laboral_alumno_consultar">OfertaConsultarActivity</string>
-    <string name="idOferta">id Oferta</string>
+    <string name="idOferta">Id Oferta</string>
     <!---->
 
     <!--Strings aspirante-->
@@ -102,13 +102,20 @@
     <string name="correo">Correo electrónico</string>
     <!--Strings de contacto_aspirante -->
 
+    <!--Strings de detalle_aplicacion -->
+    <string name="detalle_aplicacion">Aplicaciones</string>
+    <string name="id_aplicacion">Identificador detalle aplicación</string>
+    <!-- <string name="candidato_id">Identificador del candidato</string> -->
+    <string name="estadoaplicacion">Estado de la aplicación</string>
+    <!--Strings de detalle_aplicacion -->
+
     <string name="opciones">Opciones</string>
     <string name="insertar">Insertar</string>
     <string name="limpiar">Limpiar campos</string>
     <string name="eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
     <string name="consultar">Consultar</string>
-    <string name="perfil_usuario">Perfil de Usuario</string>
+    <string name="perfil_usuario">Informacion de perfil del aplicante</string>
     <!--Strings de Adeministrador-->
     <string name="Departamento">Departamento</string>
     <string name="Area_Trabajo">Area Trabajo</string>
@@ -129,4 +136,18 @@
     <string name="Razon_Social_Empresa">Razon Social:</string>
     <string name="Nombre_Empresa">Nombre Empresa:</string>
     <string name="Direccion_Empresa">Direccion Empresa:</string>
+
+    <!--Strings de puesto-empresa -->
+    <string name="idPuesto">Id Puesto</string>
+    <string name="nombrePuesto">Nombre Puesto</string>
+    <string name="numPuesto">Numeros de Puesto</string>
+    <string name="idArea">Id Area</string>
+
+    <!--Strings de evaluacion-empresa -->
+    <string name="idEva">Id Evaluacion</string>
+    <string name="idApp">Id Aplicacion</string>
+    <string name="tipo">Tipo de Evaluacion</string>
+    <string name="fecha">Fecha de Evaluacion</string>
+    <string name="estadoEva">Estado de Evaluacion</string>
+
 </resources>

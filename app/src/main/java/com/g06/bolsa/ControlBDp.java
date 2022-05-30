@@ -17,7 +17,7 @@ import com.g06.bolsa.clases_auxiliares.OfertaLaboral;
 
 public class ControlBDp {
     private static final String[]camposPerfil = new String []
-            {"id_candidato","nombre_candidato","apellido_candidato","departamento", "municipio"};
+            {"id_candidato","nombres_candidato","apellidos_candidato","departamento", "municipio"};
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -109,7 +109,7 @@ public class ControlBDp {
     public DatoPerfil consultardp(String id) {
         String[] ids = {id};
         Cursor cursor = db.query("PERFIL_CANDIDATO",
-                new String[] {"ID_CANDIDATO","nombre_candidato","apellido_candidato","departamento","municipio"},
+                new String[] {"ID_CANDIDATO","nombres_candidato","apellidos_candidato","departamento","municipio"},
                 "id_candidato = ?",
                 ids, null, null, null);
 
@@ -129,11 +129,11 @@ public class ControlBDp {
         String registrosInsertados="Registro insertado Nº= ";
         long contador = 0;
         ContentValues ofer = new ContentValues();
-        ofer.put("id_candidato", dp.getIdCandidato());
-        ofer.put("nombreCandidato", dp.getNombreCandidato());
-        ofer.put("apellidoCandidato", dp.getApellidoCandidato());
-        ofer.put("departamento", dp.getDepartamento());
-        ofer.put("municipio", dp.getMunicipio());
+        ofer.put("ID_CANDIDATO", dp.getIdCandidato());
+        ofer.put("NOMBRES_CANDIDATO", dp.getNombreCandidato());
+        ofer.put("APELLIDOS_CANDIDATO", dp.getApellidoCandidato());
+        ofer.put("DEPARTAMENTO", dp.getDepartamento());
+        ofer.put("MUNICIPIO", dp.getMunicipio());
         contador=db.insert("PERFIL_CANDIDATO", null, ofer);
         if(contador==-1 || contador==0)
         {
@@ -149,7 +149,7 @@ public class ControlBDp {
     public String eliminardp(DatoPerfil dp) {
         String regAfectados="filas afectadas= ";
         int contador=0;
-        contador+=db.delete("PERFIL_CANDIDATO", "id_oferta='"+dp.getIdCandidato()+"'", null);
+        contador+=db.delete("PERFIL_CANDIDATO", "ID_CANDIDATO='"+dp.getIdCandidato()+"'", null);
         regAfectados+=contador;
         return regAfectados;
     }
