@@ -124,5 +124,9 @@
     <!--Strings de Area Trabajo-->
     <string name="Id_AreaTrabajo">ID Area Trabajo:</string>
     <string name="Nombre_AreaTrabajo">Nombre Area Trabajo:</string>
-
+    <!--Strings de Empresa-->
+    <string name="Id_Empresa">Id Empresa:</string>
+    <string name="Razon_Social_Empresa">Razon Social:</string>
+    <string name="Nombre_Empresa">Nombre Empresa:</string>
+    <string name="Direccion_Empresa">Direccion Empresa:</string>
 </resources>

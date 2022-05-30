@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".empresa.EmpresaInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".empresa.EmpresaEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".empresa.EmpresaConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".empresa.EmpresaActualizarActivity"
+            android:exported="false" />
+        <activity
             android:name=".area_trabajo.Area_TrabajoMenuActivity"
             android:exported="false" />
         <activity
@@ -38,9 +50,8 @@
         <activity
             android:name=".departamento.DepartamentoConsultarActivity"
             android:exported="false" />
-        <activity
-            android:name=".departamento.DepartamentoActualizarActivity"/>
-
+        <activity android:name=".departamento.DepartamentoActualizarActivity"
+            android:exported="false"/>
         <activity
             android:name=".datosPerfil.DatosPerMenuActivity"
             android:exported="false" />
