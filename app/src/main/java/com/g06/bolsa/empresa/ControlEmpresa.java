@@ -58,24 +58,28 @@ public class ControlEmpresa {
     }
 
     public String insertarEmpresa(Empresa empresa) {
-        String registrosInsertados = "Registro insertado Nº= ";
-        long contador = 0;
-        ContentValues values = new ContentValues();
-        values.put("ID_EMPRESA", empresa.getId());
-        values.put("ID_DEPARTAMENTO", empresa.getIdDepartamento());
-        values.put("RAZON_SOCIAL_EMPRESA", empresa.getRazon_social());
-        values.put("NOMBRE_EMPRESA",empresa.getNombre());
-        values.put("DIRECCION_EMPRESA",empresa.getDireccion());
+        if(verificarIntegridad(empresa,2)) {
+            String registrosInsertados = "Registro insertado Nº= ";
+            long contador = 0;
+            ContentValues values = new ContentValues();
+            values.put("ID_EMPRESA", empresa.getId());
+            values.put("ID_DEPARTAMENTO", empresa.getIdDepartamento());
+            values.put("RAZON_SOCIAL_EMPRESA", empresa.getRazon_social());
+            values.put("NOMBRE_EMPRESA", empresa.getNombre());
+            values.put("DIRECCION_EMPRESA", empresa.getDireccion());
 
 
-        contador = db.insert("EMPRESA", null, values);
-        if (contador == -1 || contador == 0) {
-            registrosInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
-        } else {
-            registrosInsertados = registrosInsertados + contador;
+            contador = db.insert("EMPRESA", null, values);
+            if (contador == -1 || contador == 0) {
+                registrosInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            } else {
+                registrosInsertados = registrosInsertados + contador;
+            }
+
+            return registrosInsertados;
+        }else{
+            return "Registro con id " + empresa.getIdDepartamento() + " no existe";
         }
-
-        return registrosInsertados;
     }
 
     public String actualizarEmpresa(Empresa empresa) {

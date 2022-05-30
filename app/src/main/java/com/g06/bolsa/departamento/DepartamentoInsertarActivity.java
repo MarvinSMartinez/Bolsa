@@ -30,7 +30,7 @@ public class DepartamentoInsertarActivity extends Activity {
         nombreDepartamento = findViewById(R.id.dptnombreInsertar);
     }
 
-    public void InsertarDepartamento(View v) {
+    public void InsertarEmpresa(View v) {
         String insertaridDepartamento = idDepartamento.getText().toString();
         String inseratarnombreDepartamento = nombreDepartamento.getText().toString();
         String regInsertados;

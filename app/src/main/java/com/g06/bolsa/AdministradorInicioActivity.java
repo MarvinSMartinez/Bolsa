@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.g06.bolsa.area_trabajo.Area_TrabajoMenuActivity;
 import com.g06.bolsa.departamento.DepartamentoMenuActivity;
+import com.g06.bolsa.empresa.EmpresaMenuActivity;
 
 
 public class AdministradorInicioActivity extends AppCompatActivity {
@@ -25,6 +26,10 @@ public class AdministradorInicioActivity extends AppCompatActivity {
     }
     public void AreaTrabajoMenu(View view) {
         Intent intent = new Intent(this, Area_TrabajoMenuActivity.class);
+        startActivity(intent);
+    }
+    public void EmpresaMenu(View view) {
+        Intent intent = new Intent(this, EmpresaMenuActivity.class);
         startActivity(intent);
     }
 
