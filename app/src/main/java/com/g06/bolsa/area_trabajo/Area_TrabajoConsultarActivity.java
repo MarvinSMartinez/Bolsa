@@ -23,8 +23,8 @@ public class Area_TrabajoConsultarActivity extends Activity {
         setContentView(R.layout.activity_area_trabajo_consultar);
 
         DBHelper = new ControlArea_trabajo(this);
-        idAreaTrabajo = findViewById(R.id.idDepartamento);
-        nombreAreaTrabajo = findViewById(R.id.nombreDepartamento);
+        idAreaTrabajo = findViewById(R.id.idAreaTrabajo);
+        nombreAreaTrabajo = findViewById(R.id.nombreAreaTrabajo);
     }
 
     public void consultarArea_Trabajo(View v) {

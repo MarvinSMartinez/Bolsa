@@ -22,8 +22,8 @@ public class Area_TrabajoInsertarActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_trabajo_insertar);
         DBHelper = new ControlArea_trabajo(this);
-        idAreaTrabajo = findViewById(R.id.dptIdInsertar);
-        nombreAreaTrabajo = findViewById(R.id.dptnombreInsertar);
+        idAreaTrabajo = findViewById(R.id.areatrabajoidinsertar);
+        nombreAreaTrabajo = findViewById(R.id.areatrabajonombreinsertar);
     }
     public void insertarArea_Trabajo(View v) {
         String insertarIdArea = idAreaTrabajo.getText().toString();
