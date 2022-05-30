@@ -12,6 +12,7 @@ import com.g06.bolsa.clases_auxiliares.Aspirante;
 import com.g06.bolsa.clases_auxiliares.DetalleOferta;
 import com.g06.bolsa.clases_auxiliares.OfertaLaboral;
 import com.g06.bolsa.clases_auxiliares.Usuario;
+import com.g06.bolsa.empresa.ControlEmpresa;
 
 import java.util.Date;
 
@@ -27,6 +28,7 @@ public class ControlBDMH18083 {
     private final Context context;
     private ControlBDMH18083.DatabaseHelper DBHelper;
     private SQLiteDatabase db;
+    private ControlEmpresa helperEmpresa;
 
     public ControlBDMH18083(Context ctx) {
         this.context = ctx;
@@ -109,6 +111,56 @@ public class ControlBDMH18083 {
                 }
                 return false;
             }
+            case 4: {
+                //verificar que al insertar oferta exista empresa
+                OfertaLaboral ofertaLaboral = (OfertaLaboral) dato;
+                String[] id2 = {ofertaLaboral.getIdEmpresa()};
+                //abrir();
+                Cursor cursor2 = db.query("empresa", null, "id_empresa = ?", id2,
+                        null, null, null);
+                if(cursor2.moveToFirst()){
+                    return true;
+                }
+                return false;
+            }
+            case 5:{
+                //verificar que al ingresar detalle exista oferta
+                DetalleOferta detalleOferta = (DetalleOferta) dato;
+                String[] id2 = {detalleOferta.getIdOferta()};
+                //abrir();
+                Cursor cursor2 = db.query("oferta_laboral", null, "id_oferta = ?", id2,
+                        null, null, null);
+                if(cursor2.moveToFirst()){
+                    return true;
+                }
+                return false;
+            }
+            case 6:{
+                //verificar que al ingresar aspirante exista detalle y empresa
+                Aspirante aspirante = (Aspirante) dato;
+                String[] id1 = {aspirante.getIdDetalleOferta()};
+                String[] id2 = {aspirante.getIdEmpresa()};
+                //abrir();
+                Cursor cursor1 = db.query("detalles_oferta", null, "id_detalle_oferta= ?", id1,
+                        null, null, null);
+                Cursor cursor2 = db.query("empresa", null, "id_empresa= ?", id2,
+                        null, null, null);
+                if(cursor1.moveToFirst() && cursor2.moveToFirst()){
+                    return true;
+                }
+                return false;
+            }
+            case 7:{
+                //Verificacion que no existan detalles para eliminar oferta
+                OfertaLaboral ofertaLaboral = (OfertaLaboral) dato;
+                Cursor c=db.query(true, "detalles_oferta", new String[] {
+                                "carnet" }, "carnet='"+ofertaLaboral.getIdOferta()+"'",null,
+                        null, null, null, null);
+                if(c.moveToFirst())
+                    return true;
+                else
+                    return false;
+            }
             default:
                 return false;
 
@@ -120,19 +172,21 @@ public class ControlBDMH18083 {
     public String insertar(OfertaLaboral ofertaLaboral) {
         String registrosInsertados="Registro insertado Nº= ";
         long contador = 0;
-        ContentValues ofer = new ContentValues();
-        ofer.put("id_oferta", ofertaLaboral.getIdOferta());
-        ofer.put("id_empresa", ofertaLaboral.getIdEmpresa());
-        ofer.put("inicio_oferta", ofertaLaboral.getInicioOferta());
-        ofer.put("fin_oferta", ofertaLaboral.getFinOferta());
-        ofer.put("nombre_oferta", ofertaLaboral.getNombreOferta());
-        contador=db.insert("OFERTA_LABORAL", null, ofer);
-        if(contador==-1 || contador==0)
-        {
-            registrosInsertados= "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
-        }
-        else {
-            registrosInsertados=registrosInsertados+contador;
+        if(verificarIntegridad(ofertaLaboral, 4)) {
+            ContentValues ofer = new ContentValues();
+            ofer.put("id_oferta", ofertaLaboral.getIdOferta());
+            ofer.put("id_empresa", ofertaLaboral.getIdEmpresa());
+            ofer.put("inicio_oferta", ofertaLaboral.getInicioOferta());
+            ofer.put("fin_oferta", ofertaLaboral.getFinOferta());
+            ofer.put("nombre_oferta", ofertaLaboral.getNombreOferta());
+            contador = db.insert("OFERTA_LABORAL", null, ofer);
+            if (contador == -1 || contador == 0) {
+                registrosInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            } else {
+                registrosInsertados = registrosInsertados + contador;
+            }
+        }else{
+            registrosInsertados="No existe empresa";
         }
 
         return registrosInsertados;
@@ -140,18 +194,20 @@ public class ControlBDMH18083 {
     public String insertar(Aspirante aspirante) {
         String registrosInsertados="Registro insertado Nº= ";
         long contador = 0;
-        ContentValues asp = new ContentValues();
-        asp.put("id_aspirante", aspirante.getIdAspirante());
-        asp.put("id_empresa", aspirante.getIdEmpresa());
-        asp.put("id_detalle_oferta", aspirante.getIdDetalleOferta());
-        asp.put("estado", aspirante.getEstado());
-        contador=db.insert("ASPIRANTE", null, asp);
-        if(contador==-1 || contador==0)
-        {
-            registrosInsertados= "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
-        }
-        else {
-            registrosInsertados=registrosInsertados+contador;
+        if(verificarIntegridad(aspirante,6)) {
+            ContentValues asp = new ContentValues();
+            asp.put("id_aspirante", aspirante.getIdAspirante());
+            asp.put("id_empresa", aspirante.getIdEmpresa());
+            asp.put("id_detalle_oferta", aspirante.getIdDetalleOferta());
+            asp.put("estado", aspirante.getEstado());
+            contador = db.insert("ASPIRANTE", null, asp);
+            if (contador == -1 || contador == 0) {
+                registrosInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            } else {
+                registrosInsertados = registrosInsertados + contador;
+            }
+        }else{
+            registrosInsertados="No existe empresa o detalle de la oferta";
         }
         return registrosInsertados;
     }
@@ -159,18 +215,20 @@ public class ControlBDMH18083 {
     public String insertar(DetalleOferta detalleOferta) {
         String registrosInsertados="Registro insertado Nº= ";
         long contador = 0;
-        ContentValues detalle = new ContentValues();
-        detalle.put("id_detalle_oferta", detalleOferta.getIdDetalleOferta());
-        detalle.put("id_oferta", detalleOferta.getIdOferta());
-        detalle.put("perfil", detalleOferta.getPerfil());
-        detalle.put("salario_oferta", detalleOferta.getSalarioOferta());
-        contador=db.insert("DETALLES_OFERTA", null, detalle);
-        if(contador==-1 || contador==0)
-        {
-            registrosInsertados= "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
-        }
-        else {
-            registrosInsertados=registrosInsertados+contador;
+        if(verificarIntegridad(detalleOferta,5)) {
+            ContentValues detalle = new ContentValues();
+            detalle.put("id_detalle_oferta", detalleOferta.getIdDetalleOferta());
+            detalle.put("id_oferta", detalleOferta.getIdOferta());
+            detalle.put("perfil", detalleOferta.getPerfil());
+            detalle.put("salario_oferta", detalleOferta.getSalarioOferta());
+            contador = db.insert("DETALLES_OFERTA", null, detalle);
+            if (contador == -1 || contador == 0) {
+                registrosInsertados = "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
+            } else {
+                registrosInsertados = registrosInsertados + contador;
+            }
+        }else {
+            registrosInsertados = "No existe oferta";
         }
         return registrosInsertados;
     }

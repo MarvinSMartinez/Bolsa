@@ -8,13 +8,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.g06.bolsa.clases_auxiliares.Empresa;
 import com.g06.bolsa.clases_auxiliares.OfertaLaboral;
+import com.g06.bolsa.empresa.ControlEmpresa;
 
 import java.util.Date;
 
 public class OfertaLaboralInsertarActivity extends Activity {
 
     ControlBDMH18083 helper;
+    ControlEmpresa helper1;
     EditText editIdOferta;
     EditText editIdEmpresa;
     EditText editInicioOferta;
@@ -44,10 +47,11 @@ public class OfertaLaboralInsertarActivity extends Activity {
         ofertaLaboral.setFinOferta(finOferta);
         ofertaLaboral.setNombreOferta(nombreOferta);
         helper.abrir();
-        regInsertados=helper.insertar(ofertaLaboral);
+        regInsertados = helper.insertar(ofertaLaboral);
         helper.cerrar();
         Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
     }
+
     public void limpiarTexto(View v) {
         editIdOferta.setText("");
         editIdEmpresa.setText("");
