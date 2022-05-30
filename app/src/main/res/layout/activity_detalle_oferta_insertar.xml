@@ -9,21 +9,21 @@
         <EditText
             android:id="@+id/editIdDetalleOferta"
             android:inputType="text"
-            android:maxLength="7" />
+            android:maxLength="4" />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/idOferta"/>
         <EditText
             android:id="@+id/editIdOferta"
             android:inputType="text"
-            android:maxLength="7" />
+            android:maxLength="4" />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/perfil" />
         <EditText
             android:id="@+id/editPerfil"
             android:inputType="text"
-            android:maxLength="250" />
+            android:maxLength="256" />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/salario" />

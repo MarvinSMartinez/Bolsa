@@ -11,21 +11,21 @@
         <EditText
             android:id="@+id/editIdAspirante"
             android:inputType="text"
-            android:maxLength="7" />
+            android:maxLength="4" />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/idDetalleOferta"/>
         <EditText
             android:id="@+id/editIdDetalleOferta"
             android:inputType="text"
-            android:maxLength="7" />
+            android:maxLength="4" />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/idEmpresa" />
         <EditText
             android:id="@+id/editIdEmpresa"
             android:inputType="text"
-            android:maxLength="10" />
+            android:maxLength="4" />
     </TableRow>
 
     <TableRow>
