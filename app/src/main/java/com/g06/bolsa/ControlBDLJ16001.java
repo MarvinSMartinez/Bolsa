@@ -56,7 +56,7 @@ public class ControlBDLJ16001 {
                 db.execSQL("create table DETALLE_APLICACION (ID_APLICACION CHAR(4) not null,ID_CANDIDATO CHAR(2),ESTADO_APLICACION smallint not null,primary key (ID_APLICACION),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));");
                 db.execSQL("create table DETALLE_EXPERIENCIA (ID_DETALLE_EXPERIENCIA CHAR(2) not null,ID_CANDIDATO CHAR(2),LUGAR_EXPERIENCIA CHAR(64) not null,PUESTO_EXPERIENCIA CHAR(64) not null,TIEMPO_EXPERIENCIA TIME,primary key (ID_DETALLE_EXPERIENCIA),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));");
                 db.execSQL("create table EVALUACION (ID_EVALUACION CHAR(4) not null,ID_APLICACION CHAR(4),TIPO_EVALUACION CHAR(32) not null,FECHA_EVALUACION DATE not null,ESTADO_EVALUACION CHAR(32),primary key (ID_EVALUACION),foreign key (ID_APLICACION) references DETALLE_APLICACION (ID_APLICACION));");
-                db.execSQL("create table MUNICIPIO (ID_MUNICIPIP CHAR(4) not null,NOMBRE_MUNICIPIO CHAR(32) not null,ID_DEPARTAMENTO CHAR(4),primary key (ID_MUNICIPIP, NOMBRE_MUNICIPIO),foreign key (ID_DEPARTAMENTO) references DEPARTAMENTO (ID_DEPARTAMENTO));");
+                db.execSQL("create table MUNICIPIO (ID_MUNICIPIO CHAR(4) not null,NOMBRE_MUNICIPIO CHAR(32) not null,ID_DEPARTAMENTO CHAR(4),primary key (ID_MUNICIPIO, NOMBRE_MUNICIPIO),foreign key (ID_DEPARTAMENTO) references DEPARTAMENTO (ID_DEPARTAMENTO));");
                 db.execSQL("create table PUESTO (ID_PUESTO CHAR(4) not null,ID_OFERTA CHAR(4),ID_AREA CHAR(4),NOMBRE_PUESTO CHAR(32) not null,VACANTES_PUESTO CHAR(4) not null, primary key (ID_PUESTO),foreign key (ID_OFERTA) references OFERTA_LABORAL (ID_OFERTA),foreign key (ID_AREA) references AREA_TRABAJO (ID_AREA));");
                 db.execSQL("create table REFERENCIA_PERSONAL (DUI_REFERENCIA NUMERIC(9) not null,NOMBRE_REFERENCIA CHAR(32) not null,TEL_REFERENCIA CHAR(8) not null,ID_CANDIDATO CHAR(2),primary key (DUI_REFERENCIA, TEL_REFERENCIA),foreign key (ID_CANDIDATO) references PERFIL_CANDIDATO (ID_CANDIDATO));");
 
@@ -131,7 +131,7 @@ public class ControlBDLJ16001 {
 
         ContentValues municipioCV = new ContentValues();
 
-        municipioCV.put("ID_MUNICIPIP", municipio.getId());
+        municipioCV.put("ID_MUNICIPIO", municipio.getId());
         municipioCV.put("nombre_municipio", municipio.getNombre());
         municipioCV.put("id_departamento", municipio.getIdDepartamento());
 

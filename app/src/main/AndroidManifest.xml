@@ -12,6 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BolsaN">
         <activity
+            android:name=".institucion_educativa.Institucion_EducativaMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".institucion_educativa.Institucion_EducativaInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".institucion_educativa.Institucion_EducativaEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".institucion_educativa.Institucion_EducativaConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".institucion_educativa.Institucion_EducativaActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".municipio.MunicipioMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".municipio.MunicipioInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".municipio.MunicipioEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".municipio.MunicipioConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".municipio.MunicipioActualizarActivity"
+            android:exported="false" />
+        <activity
             android:name=".empresa.EmpresaMenuActivity"
             android:exported="false" />
         <activity

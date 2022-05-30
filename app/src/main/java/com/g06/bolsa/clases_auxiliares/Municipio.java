@@ -1,8 +1,8 @@
 package com.g06.bolsa.clases_auxiliares;
 
 public class Municipio {
-    private String idDepartamento;
     private String id;
+    private String idDepartamento;
     private String nombre;
 
     public Municipio() {

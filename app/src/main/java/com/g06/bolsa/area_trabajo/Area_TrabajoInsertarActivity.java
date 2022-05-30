@@ -30,8 +30,8 @@ public class Area_TrabajoInsertarActivity extends Activity {
         String insertarNombreArea = nombreAreaTrabajo.getText().toString();
         String regInsertados;
         Area_Trabajo area = new Area_Trabajo();
-        area.setId(insertarIdArea);
-        area.setNombre(insertarNombreArea);
+            area.setId(insertarIdArea);
+            area.setNombre(insertarNombreArea);
         DBHelper.abrir();
         regInsertados = DBHelper.insertarArea_Trabajo(area);
         DBHelper.cerrar();

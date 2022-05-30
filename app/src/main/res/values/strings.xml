@@ -128,6 +128,17 @@
     <!--Strings de Departamento-->
     <string name="Id_departamento">ID Departamento:</string>
     <string name="Nombre_departamento">Nombre Departamento:</string>
+    <!--Strings de Municipio-->
+    <string name="municipio">Municipio</string>
+    <string name="ID_municipo">ID Municipio:</string>
+    <string name="Nombre_municipio">Nombre Municipio:</string>
+
+
+    <!--Strings de Institucion-->
+    <string name="Institucion">Institucion Educativa</string>
+    <string name="ID_Institucion">ID Institucion:</string>
+    <string name="Nombre_Institucion">Nombre Institucion:</string>
+
     <!--Strings de Area Trabajo-->
     <string name="Id_AreaTrabajo">ID Area Trabajo:</string>
     <string name="Nombre_AreaTrabajo">Nombre Area Trabajo:</string>

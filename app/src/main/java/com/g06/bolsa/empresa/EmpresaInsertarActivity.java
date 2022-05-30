@@ -38,11 +38,11 @@ public class EmpresaInsertarActivity extends Activity {
         String insertarDireccionEmpresa = DireccionEmpresa.getText().toString();
         String regInsertados;
         Empresa empresa = new Empresa();
-        empresa.setId(IdEmpresa.getText().toString());
-        empresa.setIdDepartamento(IdDepartamento.getText().toString());
-        empresa.setRazon_social(RazonSocial.getText().toString());
-        empresa.setNombre(NombreEmpresa.getText().toString());
-        empresa.setDireccion(DireccionEmpresa.getText().toString());
+        empresa.setId(insertaridEmpresa);
+        empresa.setIdDepartamento(insertaridDepartamento);
+        empresa.setRazon_social(insertarRazonSocial);
+        empresa.setNombre(insertarNombreEmpresa);
+        empresa.setDireccion(insertarDireccionEmpresa);
         DBHelper.abrir();
         regInsertados = DBHelper.insertarEmpresa(empresa);
         DBHelper.cerrar();
