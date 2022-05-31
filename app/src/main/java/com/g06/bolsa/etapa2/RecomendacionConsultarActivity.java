@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.g06.bolsa.R;
+
 public class RecomendacionConsultarActivity extends AppCompatActivity {
 
     @Override
