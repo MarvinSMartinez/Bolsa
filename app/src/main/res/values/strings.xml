@@ -161,4 +161,7 @@
     <string name="fecha">Fecha de Evaluacion</string>
     <string name="estadoEva">Estado de Evaluacion</string>
 
+    <string name="reco">Recomendacion</string>
+
+
 </resources>
