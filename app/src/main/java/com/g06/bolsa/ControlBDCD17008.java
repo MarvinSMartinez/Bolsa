@@ -7,12 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.g06.bolsa.clases_auxiliares.Aspirante;
-import com.g06.bolsa.clases_auxiliares.DatoEstudio;
-import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
-import com.g06.bolsa.clases_auxiliares.DetalleOferta;
 import com.g06.bolsa.clases_auxiliares.Evaluacion;
-import com.g06.bolsa.clases_auxiliares.OfertaLaboral;
 import com.g06.bolsa.clases_auxiliares.Puesto;
 
 public class ControlBDCD17008 {
@@ -32,7 +27,7 @@ public class ControlBDCD17008 {
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
-        private static final String BASE_DATOS = "tarea.s3db";
+        private static final String BASE_DATOS = "tarea2.s3db";
         private static final int VERSION = 1;
 
         // constructor.
@@ -42,7 +37,7 @@ public class ControlBDCD17008 {
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-            //Crear Base
+
         }
 
         @Override
