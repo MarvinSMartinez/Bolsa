@@ -3,20 +3,24 @@ package com.g06.bolsa.clases_auxiliares;
 public class DatoPerfil {
 
     String idCandidato;
+    String departamento;
+    String idUsuario;
     String nombreCandidato;
     String apellidoCandidato;
-    String departamento;
-    String municipio;
+    String dui;
+    String nit;
 
     public DatoPerfil() {
     }
 
-    public DatoPerfil(String idCandidato, String nombreCandidato,String apellidoCandidato, String departamento, String municipio) {
+    public DatoPerfil(String idCandidato, String departamento,String idUsuario, String nombreCandidato,String apellidoCandidato,String dui,String nit) {
         this.idCandidato = idCandidato;
+        this.departamento = departamento;
+        this.idUsuario=idUsuario;
         this.nombreCandidato = nombreCandidato;
         this.apellidoCandidato=apellidoCandidato;
-        this.departamento = departamento;
-        this.municipio = municipio;
+        this.dui=dui;
+        this.nit=nit;
     }
 
     public String getIdCandidato() {
@@ -25,6 +29,21 @@ public class DatoPerfil {
     public void setIdCandidato(String idCandidato) {
         this.idCandidato = idCandidato;
     }
+    public String getDepartamento() {
+        return departamento;
+    }
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
     public String getNombreCandidato() {
         return nombreCandidato;
     }
@@ -37,16 +56,19 @@ public class DatoPerfil {
     public void setApellidoCandidato(String apellidoCandidato) {
         this.apellidoCandidato = apellidoCandidato;
     }
-    public String getDepartamento() {
-        return departamento;
+
+    public String getDui() {
+        return dui;
     }
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
+    public void setDui(String dui) {
+        this.dui = dui;
     }
-    public String getMunicipio() {
-        return municipio;
+
+    public String getNit() {
+        return nit;
     }
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+
+    public void setNit(String nit) {
+        this.nit = nit;
     }
 }

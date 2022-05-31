@@ -11,6 +11,15 @@ public class PerfilCandidato {
     public PerfilCandidato( ) {
 
     }
+    public PerfilCandidato(String idperfilcandidato, String iddepartamento, String idusuario, String nombre, String apellido, String dui, String nit) {
+        this.idperfilcandidato = idperfilcandidato;
+        this.iddepartamento = iddepartamento;
+        this.idusuario = idusuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dui = dui;
+        this.nit = nit;
+    }
 
     public String getIdperfilcandidato() {
         return idperfilcandidato;

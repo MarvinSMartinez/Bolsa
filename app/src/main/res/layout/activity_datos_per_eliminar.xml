@@ -32,7 +32,7 @@ tools:context=".datosPerfil.DatosPerEliminar">
         android:textSize="15dp"
         />
     <EditText
-        android:id="@+id/idperfilc"
+        android:id="@+id/idperfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -41,79 +41,6 @@ tools:context=".datosPerfil.DatosPerEliminar">
         android:minHeight="48dp"
         android:padding="13dp"
         android:textColorHint="#757575" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Nombre : "
-    android:textColor="@color/black"
-    android:padding="5dp"
-    android:layout_marginTop="15dp"
-    android:textSize="15dp"
-    />
-<EditText
-    android:id="@+id/anombre"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    android:hint="Ingrese su nombre"
-    android:minHeight="48dp"
-    android:padding="15dp"
-    android:textColorHint="#757575"
-    tools:ignore="TextFields" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Apellido : "
-    android:textColor="@color/black"
-    android:padding="5dp"
-    android:layout_marginTop="15dp"
-    android:textSize="15dp"
-    />
-<EditText
-    android:id="@+id/aapellido"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:autofillHints=""
-    android:ems="10"
-    android:hint="Ingrese su apellido"
-    android:minHeight="48dp"
-    android:padding="13dp"
-    android:textColorHint="#757575" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Departamento : "
-    android:textColor="@color/black"
-    android:padding="5dp"
-    android:layout_marginTop="15dp"
-    android:textSize="15dp"
-    />
-<Spinner
-    android:id="@+id/adepto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="48dp"
-    android:padding="13dp"
-    />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Municipio : "
-    android:textColor="@color/black"
-    android:padding="5dp"
-    android:layout_marginTop="15dp"
-    android:textSize="15dp"
-    />
-<Spinner
-    android:id="@+id/amunicipio"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:autofillHints=""
-    android:ems="10"
-    android:hint="Ingrese su apellido"
-    android:minHeight="48dp"
-    android:padding="13dp"
-    android:textColorHint="#757575" />
 
 <Button
     android:id="@+id/btEliminardp"

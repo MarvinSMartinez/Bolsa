@@ -9,23 +9,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.g06.bolsa.clases_auxiliares.Aspirante;
-import com.g06.bolsa.clases_auxiliares.DatoEstudio;
-import com.g06.bolsa.clases_auxiliares.DatoPerfil;
-import com.g06.bolsa.clases_auxiliares.DetalleOferta;
-import com.g06.bolsa.clases_auxiliares.OfertaLaboral;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 
 public class ControlBDp {
     private static final String[]camposPerfil = new String []
-            {"id_candidato","nombres_candidato","apellidos_candidato","departamento", "municipio"};
+            {"ID_CANDIDATO","ID_DEPARTAMENTO","ID_USUARIO",
+                    "NOMBRES_CANDIDATO", "APELLIDOS_CANIDATO",
+                    "DUI_CANDIDATO","NIT_CANDIDATO"};
 
     private final Context context;
-    private DatabaseHelper DBHelper;
+    private ControlBDp.DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
     public ControlBDp(Context ctx) {
         this.context = ctx;
-        DBHelper = new DatabaseHelper(context);
+        DBHelper = new ControlBDp.DatabaseHelper(context);
     }
     private static class DatabaseHelper extends SQLiteOpenHelper {
         private static final String BASE_DATOS = "tarea.s3db";
@@ -42,32 +40,15 @@ public class ControlBDp {
 
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
         }
-
     }
-
 
     public void abrir() {
         db = DBHelper.getWritableDatabase();
         return;
     }
-
     public void cerrar() {
         DBHelper.close();
-    }
-
-    public String actualizar(DatoPerfil dp) {
-        if(verificarIntegridad(dp, 3)){
-            String[] id = {dp.getIdCandidato()};
-            ContentValues cv = new ContentValues();
-            cv.put("nombre", dp.getNombreCandidato());
-            cv.put("apellido", dp.getApellidoCandidato());
-            db.update("PERFIL_CANDIDATO", cv, "ID_CANDIDATO = ?", id);
-            return "Registro Actualizado Correctamente";
-        }else{
-            return "Registro con id " + dp.getIdCandidato() + " no existe";
-        }
     }
     public String llenarBD() {return "DB llenada correctamente";}
 
@@ -75,8 +56,8 @@ public class ControlBDp {
         switch (relacion) {
             case 1: {
                 //verificar que exista
-                DatoPerfil datoPerfil = (DatoPerfil) dato;
-                String[] id = {datoPerfil.getIdCandidato()};
+                PerfilCandidato datoPerfil = (PerfilCandidato) dato;
+                String[] id = {datoPerfil.getIdperfilcandidato()};
                 abrir();
                 Cursor c2 = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", id, null, null,
                         null);
@@ -86,54 +67,22 @@ public class ControlBDp {
                 }
                 return false;
             }
-            case 2: {
-                //verificar que exista aspirante
-                Aspirante aspirante = (Aspirante) dato;
-                String[] id = {aspirante.getIdAspirante()};
-                abrir();
-                Cursor c2 = db.query("ASPIRANTE", null, "id_aspirante = ?", id, null, null,
-                        null);
-                if (c2.moveToFirst()) {
-                    //Se encontro aspirante
-                    return true;
-                }
-                return false;
-            }
             default:
                 return false;
-
         }
     }
 
-
-    public DatoPerfil consultardp(String id) {
-        String[] ids = {id};
-        Cursor cursor = db.query("PERFIL_CANDIDATO",
-                new String[] {"ID_CANDIDATO","nombres_candidato","apellidos_candidato","departamento","municipio"},
-                "id_candidato = ?",
-                ids, null, null, null);
-
-        if(cursor.moveToFirst()){
-            DatoPerfil cand = new DatoPerfil();
-            cand.setIdCandidato(cursor.getString(0));
-            cand.setIdCandidato(cursor.getString(1));
-            cand.setIdCandidato(cursor.getString(2));
-
-            return cand;
-        }else{
-            return null;
-        }
-    }
-
-    public String insertar(DatoPerfil dp) {
+    /*public String insertardatop(DatoPerfil dp) {
         String registrosInsertados="Registro insertado Nº= ";
         long contador = 0;
         ContentValues ofer = new ContentValues();
         ofer.put("ID_CANDIDATO", dp.getIdCandidato());
+        ofer.put("ID_DEPARTAMENTO", dp.getDepartamento());
+        ofer.put("ID_USUARIO",dp.getIdUsuario());
         ofer.put("NOMBRES_CANDIDATO", dp.getNombreCandidato());
         ofer.put("APELLIDOS_CANDIDATO", dp.getApellidoCandidato());
-        ofer.put("DEPARTAMENTO", dp.getDepartamento());
-        ofer.put("MUNICIPIO", dp.getMunicipio());
+        ofer.put("DUI_CANDIDATO",dp.getDui());
+        ofer.put("NIT_CANDIDATO",dp.getNit());
         contador=db.insert("PERFIL_CANDIDATO", null, ofer);
         if(contador==-1 || contador==0)
         {
@@ -144,12 +93,77 @@ public class ControlBDp {
         }
 
         return registrosInsertados;
+    }*/
+    public String insertar(PerfilCandidato de) {
+        String regInsertados="Registro Insertado Nº= ";
+        long contador=0;
+        //if (verificarIntegridad(de,3)) {
+        ContentValues alum = new ContentValues();
+        alum.put("ID_CANDIDATO", de.getIdperfilcandidato());
+        alum.put("ID_DEPARTAMENTO ", de.getIddepartamento());
+        alum.put("ID_USUARIO", de.getIdusuario());
+        alum.put("NOMBRES_CANDIDATO", de.getNombre());
+        alum.put("APELLIDOS_CANIDATO", de.getApellido());
+        alum.put("DUI_CANDIDATO", de.getDui());
+        alum.put("NIT_CANDIDATO", de.getNit());
+
+        contador = db.insert("PERFIL_CANDIDATO", null, alum);
+        // }
+        if(contador==-1 || contador==0)
+        {
+            regInsertados= "Error al Insertar el registro: Verificar inserción";
+        }
+        else {
+            regInsertados=regInsertados+contador;
+        }
+        return regInsertados;
     }
 
-    public String eliminardp(DatoPerfil dp) {
+    public String actualizardp(PerfilCandidato dp) {
+        if(verificarIntegridad(dp, 1)){
+            String[] id = {dp.getIdperfilcandidato()};
+            ContentValues cv = new ContentValues();
+           // cv.put("ID_DEPARTAMENTO",dp.getIddepartamento());
+           // cv.put("ID_USUARIO",dp.getIdusuario());
+            cv.put("NOMBRES_CANDIDATO", dp.getNombre());
+            cv.put("APELLIDOS_CANDIDATO", dp.getApellido());
+            cv.put("DUI_CANDIDATO",dp.getDui());
+            cv.put("NIT_CANDIDATO",dp.getNit());
+           // cv.put("");
+            db.update("PERFIL_CANDIDATO", cv, "ID_CANDIDATO = ?", id);
+            return "Registro Actualizado Correctamente";
+        }else{
+            return "Registro con id " + dp.getIdperfilcandidato() + " no existe";
+        }
+    }
+
+
+
+    public PerfilCandidato consultardp(String id) {
+        String[] ids = {id};
+        Cursor cursor = db.query("PERFIL_CANDIDATO"
+                , camposPerfil, "ID_CANDIDATO = ?", ids, null, null, null);
+
+        if(cursor.moveToFirst()){
+            PerfilCandidato cand = new PerfilCandidato();
+            cand.setIdperfilcandidato(cursor.getString(0));
+            cand.setIddepartamento(cursor.getString(1));
+            cand.setIdusuario(cursor.getString(2));
+            cand.setNombre(cursor.getString(3));
+            cand.setApellido(cursor.getString(4));
+            cand.setDui(cursor.getString(5));
+            cand.setNit(cursor.getString(6));
+
+            return cand;
+        }else{
+            return null;
+        }
+    }
+
+    public String eliminardp(PerfilCandidato dp) {
         String regAfectados="filas afectadas= ";
         int contador=0;
-        contador+=db.delete("PERFIL_CANDIDATO", "ID_CANDIDATO='"+dp.getIdCandidato()+"'", null);
+        contador+=db.delete("PERFIL_CANDIDATO", "ID_CANDIDATO='"+dp.getIdperfilcandidato()+"'", null);
         regAfectados+=contador;
         return regAfectados;
     }

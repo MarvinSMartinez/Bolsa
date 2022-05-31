@@ -20,13 +20,18 @@ import com.g06.bolsa.ControlBDp;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DatoPerfil;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 
-public class DatosPerActualizarActivity extends Activity implements AdapterView.OnItemSelectedListener {
+public class DatosPerActualizarActivity extends Activity {
 
     ControlBDp helper;
-    EditText id;
-    EditText nombreCandidato;
-    EditText apellidoCandidato;
+    EditText idperfila;
+   // EditText idDepartamentoa;
+   // EditText idUsuarioa;
+    EditText nombrea;
+    EditText apellidoa;
+    EditText duia;
+    EditText nita;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,70 +41,39 @@ public class DatosPerActualizarActivity extends Activity implements AdapterView.
         helper = new ControlBDp(this);
 
         // Referencia a los widgets de la interfaz.
-        id = findViewById(R.id.idperfilc);
-        nombreCandidato = findViewById(R.id.anombre);
-        apellidoCandidato = findViewById(R.id.aapellido);
-        //departamentos
-        Spinner spinner=findViewById(R.id.spinnerdepto);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.departamentos_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-        //municipios
-        Spinner spinner2=findViewById(R.id.spinnermunicipio);
-        ArrayAdapter<CharSequence> adapter2=ArrayAdapter.createFromResource(this,R.array.municipios_array, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(this);
-    }
-   /* public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.activity_datos_per_actualizar,container,false);
-        Spinner spinner= (Spinner)view.findViewById(R.id.spinnerdepto);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(view.getContext(),R.array.departamentos_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-        return view;
-    }*/
-   /* public void actualizar(View v) {
-        DatoPerfil dp = new DatoPerfil();
-        dp.setIdCandidato(id.getText().toString());
-        dp.setNombreCandidato(nombreCandidato.getText().toString());
-        dp.setApellidoCandidato(apellidoCandidato.getText().toString());
-        helper.abrir();
-        String estado = helper.actualizar(dp);
-        helper.cerrar();
-        Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
-    }*/
-
-    public void limpiarT(View view) {
-        id.setText("");
-        nombreCandidato.setText("");
-        apellidoCandidato.setText("");
+        idperfila = (EditText) findViewById(R.id.idperfila);
+      //  idDepartamentoa=(EditText) findViewById(R.id.idDepartamentoa);
+     //   idUsuarioa=(EditText) findViewById(R.id.idUsuarioa);
+        nombrea = (EditText) findViewById(R.id.nombrea);
+        apellidoa =(EditText) findViewById(R.id.apellidoa);
+        duia=(EditText) findViewById(R.id.duia);
+        nita=(EditText) findViewById(R.id.nita);
 
     }
     public void actualizardp(View view) {
-        DatoPerfil de = new DatoPerfil();
-        de.setIdCandidato(id.getText().toString());
-        de.setNombreCandidato(nombreCandidato.getText().toString());
-        de.setApellidoCandidato(apellidoCandidato.getText().toString());
+        PerfilCandidato dpe = new PerfilCandidato();
+        dpe.setIdperfilcandidato(idperfila.getText().toString());
+       // dpe.setIddepartamento(idDepartamentoa.getText().toString());
+       // dpe.setIdusuario(idUsuarioa.getText().toString());
+        dpe.setNombre(nombrea.getText().toString());
+        dpe.setApellido(apellidoa.getText().toString());
+        dpe.setDui(duia.getText().toString());
+        dpe.setNit(nita.getText().toString());
         helper.abrir();
-        String estado = helper.actualizar(de);
+        String estado = helper.actualizardp(dpe);
         helper.cerrar();
-
         Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
     }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
-
-      //  String text=parent.getItemAtPosition(position).toString();
-        //Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    public void limpiarT(View view) {
+        idperfila.setText("");
+      //  idDepartamentoa.setText("");
+     //   idUsuarioa.setText("");
+        nombrea.setText("");
+        apellidoa.setText("");
+        duia.setText("");
+        nita.setText("");
 
     }
+
+
 }

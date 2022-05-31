@@ -16,70 +16,66 @@ import com.g06.bolsa.ControlBDp;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 import com.g06.bolsa.clases_auxiliares.DatoPerfil;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 
-public class DatosPerInsertar extends Activity implements AdapterView.OnItemSelectedListener{
+public class DatosPerInsertar extends Activity {
 
     ControlBDp helper;
-    EditText idC;
-    EditText nombreCandidato;
-    EditText apellidoCandidato;
+    EditText idperfili;
+    EditText idDepartamentoi;
+    EditText idUsuarioi;
+    EditText nombrei;
+    EditText apellidoi;
+    EditText duii;
+    EditText niti;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_per_insertar);
 
         helper = new ControlBDp(this);
-        idC=findViewById(R.id.idperfilc);
-        nombreCandidato = findViewById(R.id.anombre);
-        apellidoCandidato = findViewById(R.id.aapellido);
+        idperfili=(EditText) findViewById(R.id.idperfili);
+        idDepartamentoi=(EditText) findViewById(R.id.idDepartamentoi);
+        idUsuarioi=(EditText) findViewById(R.id.idUsuarioi);
+        nombrei =(EditText) findViewById(R.id.nombrei);
+        apellidoi =(EditText) findViewById(R.id.apellidoi);
+        duii=(EditText) findViewById(R.id.duii);
+        niti=(EditText) findViewById(R.id.niti);
 
-        //departamentos
-        Spinner spinner=findViewById(R.id.spinnerdepto);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.departamentos_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-        //municipios
-        Spinner spinner2=findViewById(R.id.spinnermunicipio);
-        ArrayAdapter<CharSequence> adapter2=ArrayAdapter.createFromResource(this,R.array.municipios_array, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(this);
     }
     public void insertardp(View view) {
-        String sid = idC.getText().toString();
-        String nombrec = nombreCandidato.getText().toString();
-        String apellidoc = apellidoCandidato.getText().toString();
+        String sid = idperfili.getText().toString();
+        String idDepto=idDepartamentoi.getText().toString();
+        String idUs=idUsuarioi.getText().toString();
+        String nombrec = nombrei.getText().toString();
+        String apellidoc = apellidoi.getText().toString();
+        String d=duii.getText().toString();
+        String n=niti.getText().toString();
 
         String regInsertados;
 
-        DatoPerfil dp = new DatoPerfil();
-        dp.setIdCandidato(sid);
-        dp.setNombreCandidato(nombrec);
-        dp.setApellidoCandidato(apellidoc);
+        PerfilCandidato de = new PerfilCandidato();
+        de.setIdperfilcandidato(sid);
+        de.setIddepartamento(idDepto);
+        de.setIdusuario(idUs);
+        de.setNombre(nombrec);
+        de.setApellido(apellidoc);
+        de.setDui(d);
+        de.setNit(n);
 
         helper.abrir();
-        regInsertados = helper.insertar(dp);
+        regInsertados = helper.insertar(de);
         helper.cerrar();
         Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
     }
 
     public void limpiaridp(View view) {
-        idC.setText("");
-        nombreCandidato.setText("");
-        apellidoCandidato.setText("");
-
+        idperfili.setText("");
+        idDepartamentoi.setText("");
+        idUsuarioi.setText("");
+        nombrei.setText("");
+        apellidoi.setText("");
+        duii.setText("");
+        niti.setText("");
     }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
-
 }

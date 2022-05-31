@@ -14,25 +14,25 @@ import com.g06.bolsa.ControlBDp;
 import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DatoPerfil;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 
 public class DatosPerEliminar extends Activity {
 
     ControlBDp helper;
     EditText id;
-    EditText nombreCandidato;
-    EditText apellidoCandidato;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_per_eliminar);
         helper = new ControlBDp(this);
-        id = findViewById(R.id.idperfilc);
+        id = findViewById(R.id.idperfile);
 
     }
     public void eliminardp(View view) {
         String regEliminadas;
-        DatoPerfil de = new DatoPerfil();
-        de.setIdCandidato(id.getText().toString());
+        PerfilCandidato de = new PerfilCandidato();
+        de.setIdperfilcandidato(id.getText().toString());
 
         helper.abrir();
         regEliminadas = helper.eliminardp(de);
@@ -42,8 +42,7 @@ public class DatosPerEliminar extends Activity {
     }
     public void limpiaredp(View view) {
         id.setText("");
-        nombreCandidato.setText("");
-        apellidoCandidato.setText("");
+
     }
 
 }

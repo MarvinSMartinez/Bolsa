@@ -15,13 +15,18 @@ import com.g06.bolsa.R;
 import com.g06.bolsa.clases_auxiliares.DatoEstudio;
 import com.g06.bolsa.clases_auxiliares.DatoPerfil;
 import com.g06.bolsa.clases_auxiliares.DetalleExperiencia;
+import com.g06.bolsa.clases_auxiliares.PerfilCandidato;
 
 public class DatosPerConsultar extends Activity {
 
     ControlBDp helper;
     EditText id;
+    EditText idDepartamento;
+    EditText idUsuario;
     EditText nombreCandidato;
     EditText apellidoCandidato;
+    EditText dui;
+    EditText nit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,43 +37,39 @@ public class DatosPerConsultar extends Activity {
 
         // Referencia a los widgets de la interfaz.
         id = findViewById(R.id.idperfilc);
-        nombreCandidato = findViewById(R.id.anombre);
-        apellidoCandidato = findViewById(R.id.aapellido);
-    }
-    public void consultar(View v) {
-        helper.abrir();
-        DatoPerfil dp = helper.consultardp(id.getText().toString());
-        helper.cerrar();
-
-        if (dp == null)
-            Toast.makeText(this, "Dato no registrado",
-                    Toast.LENGTH_LONG).show();
-        else {
-            id.setText(String.valueOf(dp.getIdCandidato()));
-            nombreCandidato.setText(String.valueOf(dp.getNombreCandidato()));
-            apellidoCandidato.setText(String.valueOf(dp.getApellidoCandidato()));
-        }
+        idDepartamento=findViewById(R.id.idDepartamentoc);
+        idUsuario=findViewById(R.id.idUsuarioc);
+        nombreCandidato = findViewById(R.id.nombrec);
+        apellidoCandidato = findViewById(R.id.apellidoc);
+        dui=findViewById(R.id.duic);
+        nit=findViewById(R.id.nitc);
     }
 
-
-    public void limpiarcdp(View view) {
-        id.setText("");
-        nombreCandidato.setText("");
-        apellidoCandidato.setText("");
-
-    }
 
     public void consultardp(View view) {
         helper.abrir();
-        DatoPerfil de = helper.consultardp(id.getText().toString());
+        PerfilCandidato de = helper.consultardp(id.getText().toString());
         helper.cerrar();
         if(de == null)
             Toast.makeText(this, "no hay registro",
                     Toast.LENGTH_LONG).show();
         else{
-            id.setText(String.valueOf(de.getIdCandidato()));
-            nombreCandidato.setText(String.valueOf(de.getNombreCandidato()));
-            apellidoCandidato.setText(String.valueOf(de.getApellidoCandidato()));
+            id.setText(String.valueOf(de.getIdperfilcandidato()));
+            idDepartamento.setText(String.valueOf(de.getIddepartamento()));
+            idUsuario.setText(String.valueOf(de.getIdusuario()));
+            nombreCandidato.setText(String.valueOf(de.getNombre()));
+            apellidoCandidato.setText(String.valueOf(de.getApellido()));
+            dui.setText(String.valueOf(de.getDui()));
+            nit.setText(String.valueOf(de.getNit()));
         }
+    }
+    public void limpiarcdp(View view) {
+        id.setText("");
+        idDepartamento.setText("");
+        idUsuario.setText("");
+        nombreCandidato.setText("");
+        apellidoCandidato.setText("");
+        dui.setText("");
+        nit.setText("");
     }
 }
