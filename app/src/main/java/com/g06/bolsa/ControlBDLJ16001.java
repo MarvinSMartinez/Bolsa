@@ -300,7 +300,7 @@ public class ControlBDLJ16001 {
     }
 
     public String actualizar(DatoEstudio de) {
-        if (verificarIntegridad(de, 3)) {
+        if (verificarIntegridad(de, 4)) {
             String[] id = {de.getEstudioNivel()};
 
             ContentValues cv = new ContentValues();
@@ -309,10 +309,10 @@ public class ControlBDLJ16001 {
 
             db.update("DATOS_ESTUDIOS", cv, "ESTUDIOS_NIVEL=?", id);
             return "Registro actualizado correctamente";
-        }else{
+        }
             return "Registro no existe";
         }
-    }
+
 
     public String actualizar(DetalleExperiencia de){
         if (verificarIntegridad(de, 2)) {
@@ -582,7 +582,7 @@ public class ControlBDLJ16001 {
             {
                 //verificar que al modificar o crear CONTACTO_ASPIRANTE exista el candidato.
                 //CONTACTO_ASPIRANTE (ID_CONTACTO
-                ContactoAspirante de= (ContactoAspirante) dato;
+               ContactoAspirante de= (ContactoAspirante) dato;
                 String[] ids = {de.getIdCandidato()};
                 abrir();
                 Cursor c = db.query("PERFIL_CANDIDATO", null, "ID_CANDIDATO = ?", ids, null, null, null);

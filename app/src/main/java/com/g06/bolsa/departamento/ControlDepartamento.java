@@ -77,7 +77,7 @@ public class ControlDepartamento {
             String[] id = {departamento.getId()};
             ContentValues values = new ContentValues();
             values.put("NOMBRE_DEPARTAMENTO", departamento.getNombre());
-            db.update("DEPARTAMENTO", values, "id_oferta = ?", id);
+            db.update("DEPARTAMENTO", values, "ID_DEPARTAMENTO = ?", id);
             return "Registro Actualizado Correctamente";
         } else {
             return "Registro con carnet " + departamento.getId() + " no existe";

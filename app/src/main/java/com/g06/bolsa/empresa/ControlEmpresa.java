@@ -92,7 +92,7 @@ public class ControlEmpresa {
             values.put("NOMBRE_EMPRESA",empresa.getNombre());
             values.put("DIRECCION_EMPRESA",empresa.getDireccion());
 
-            db.update("EMPRESA", values, "id_oferta = ?", id);
+            db.update("EMPRESA", values, "ID_EMPRESA = ?", id);
             return "Registro Actualizado Correctamente";
         }else {
             return "Registro con id " + empresa.getIdDepartamento() + " no existe";

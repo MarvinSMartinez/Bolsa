@@ -126,7 +126,7 @@ public class ControlBDp {
            // cv.put("ID_DEPARTAMENTO",dp.getIddepartamento());
            // cv.put("ID_USUARIO",dp.getIdusuario());
             cv.put("NOMBRES_CANDIDATO", dp.getNombre());
-            cv.put("APELLIDOS_CANDIDATO", dp.getApellido());
+            cv.put("APELLIDOS_CANIDATO", dp.getApellido());
             cv.put("DUI_CANDIDATO",dp.getDui());
             cv.put("NIT_CANDIDATO",dp.getNit());
            // cv.put("");

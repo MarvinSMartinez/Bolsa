@@ -27,7 +27,7 @@ public class ControlBDCD17008 {
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
-        private static final String BASE_DATOS = "tarea2.s3db";
+        private static final String BASE_DATOS = "tarea.s3db";
         private static final int VERSION = 1;
 
         // constructor.
@@ -142,7 +142,7 @@ public class ControlBDCD17008 {
 ///////////Read
     public Puesto consultarPuesto(String id0){
         String[] id = {id0};
-        Cursor cursor = db.query("PUESTO", camposPuesto, "ID_OFERTA = ?", id, null, null, null);
+        Cursor cursor = db.query("PUESTO", camposPuesto, "ID_PUESTO = ?", id, null, null, null);
         if(cursor.moveToFirst()){
             Puesto puesto = new Puesto();
 
